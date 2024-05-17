@@ -41,4 +41,5 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
     <script src="../javascript/data_tables.js"></script>
     <script src="../javascript/if_generate.js"></script>
+    <script src="../javascript/accounts_list.js"></script>
     

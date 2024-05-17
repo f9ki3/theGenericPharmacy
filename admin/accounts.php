@@ -16,20 +16,34 @@
                 <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
             </svg>
         </div> -->
-
+        
         <div class="row">
             <div class="col-12 col-md-2">
                 <?php include 'navbar.php'?>
             </div>
             <div class="col-12 col-md-10 p-5">
             <div class="row">
-            <div class="rounded rounded-4 border p-4 pb-5" style="height: auto">
-                    <div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px">
-                       <h1 style="font-size: 100px">404</h1>
+            <div class="rounded rounded-4 border p-4 mt-4" style="height: auto">
+            <h5 class="fw-bolder mb-3 ms-1">Account List</h5>
+                    <div class="d-flex flex-column align-items-center justify-content-center" >
+                       <!-- <h1 style="font-size: 100px">404</h1>
                        <p><i <i class="bi me-2 bi-rocket-takeoff"></i> Page not found</p>
-                        
+                         -->
+                         <table id="accounts" class="display table-striped" style="font-size: 12px">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>First Name</th>
+                                    <th>last name</th>
+                                    <th>Cost</th>
+                                    <th>Profit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
-               
             </div>
 
         </div>

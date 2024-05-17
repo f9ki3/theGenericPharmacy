@@ -8,14 +8,14 @@ $(document).ready(function () {
             $('#transactionTable').DataTable({
                 data: data,
                 columns: [
-                    { data: 'id' },
+                    { data: 'code' },
                     { data: 'product_name' },
                     { data: 'type' },
                     { data: 'qty' },
                     { data: 'sales' },
                     { data: 'cost' },
                     { data: 'profit' },
-                    { data: 'year' }
+                    { data: 'date' }
                 ]
             });
         }

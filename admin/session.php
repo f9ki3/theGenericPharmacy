@@ -16,7 +16,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true && $_SESSION[
     $user_type = $_SESSION['user_type'];
 } else {
     // User is not logged in or user type is not 0, redirect to the login page
-    header("Location: ../login");
+    header("Location: ../");
     exit;
 }
 ?>

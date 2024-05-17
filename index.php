@@ -9,12 +9,13 @@
 <body>
     <div class="container">
         <div id="loader" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
-            <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
-                <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
-                <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
-                <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-                <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
-            </svg>
+            <div class="loading-wave">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+
         </div>
         <div id="login-div" class="row " style="display: none">
             <!-- <div class="d-flex flex-row justify-content-between align-items-center">
@@ -37,7 +38,7 @@
                             <h3 class="fw-bold">READY TO LOGIN</h3>
                             <hr>
                             <p>Username</p>
-                            <input id="username" type="text" class="form-control form-control-lg rounded-4 rounded placeholder="Enter your Username">
+                            <input id="username" type="text" class="form-control form-control-lg rounded-4 rounded " placeholder="Enter your Username">
                             <p class="mt-3">Password</p>
                             <input id="password" type="password" class="form-control form-control-lg rounded rounded-4" placeholder="Enter your password">
                             

@@ -39,7 +39,7 @@
                                     <th>Sales</th>
                                     <th>Cost</th>
                                     <th>Profit</th>
-                                    <th>Year</th>
+                                    <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>

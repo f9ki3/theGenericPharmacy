@@ -34,16 +34,9 @@
                                 <h3 class="fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
                             </div>
                             <div class="ps-4 ms-5 border-start">
-                                <h5>0 </h5>
-                                <h5 class="fw-bolder">Today</h5>
-                            </div>
-                            <div class="ps-3 ms-3">
-                                <h5 class="">0 </h5>
-                                <h5 class="fw-bolder">Monthly</h5>
-                            </div>
-                            <div class="ps-3 ms-3">
-                                <h5 class="">3,562 </h5>
-                                <h5 class="fw-bolder">Annual</h5>
+                                <p class="p-0 m-0"><?php echo $address?></p>
+                                <p class="p-0 m-0"><?php echo $email?></p>
+                                <p class="p-0 m-0"><?php echo $contact?></p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +45,7 @@
                 <div class="col-12 col-md-4">
                     <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 170px">
                             <h5>Revenue</h5>
-                            <h2 id="#revenue" class="fw-bolder">PHP 831,991.50 </h2>
+                            <h2 id="revenue" class="fw-bolder">PHP 0.00 </h2>
                     </div>
                 </div>
 
@@ -113,28 +106,9 @@
                     <div class="col-12 col-md-6">
                         <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
                             <h5 class="fw-bolder ms-3">Top Sale Product</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item d-flex m-0 justify-content-between">
-                                    <p>FACE MASK</p>
-                                    <p>13,100 sales</p>
-                                </li>
-                                <li class="list-group-item d-flex m-0 justify-content-between">
-                                    <p>HAND SANITIZER</p>
-                                    <p>12,500 sales</p>
-                                </li>
-                                <li class="list-group-item d-flex m-0 justify-content-between">
-                                    <p>PAIN RELIEF TABLETS</p>
-                                    <p>11,750 sales</p>
-                                </li>
-                                <li class="list-group-item d-flex m-0 justify-content-between">
-                                    <p>MULTIVITAMINS</p>
-                                    <p>10,400 sales</p>
-                                </li>
-                                <li class="list-group-item d-flex m-0 justify-content-between">
-                                    <p>COUGH SYRUP</p>
-                                    <p>9,800 sales</p>
-                                </li>
-                            </ul>
+                            <div id="data-list">
+
+                            </div>
 
                         </div>
                     </div>

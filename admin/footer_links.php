@@ -14,6 +14,7 @@
     <script src="../javascript/insert_generate_ticket.js"></script>
     <script src="../javascript/get_revenue.js"></script>
     <script src="../javascript/get_sales_cost_profit.js"></script>
+    <script src="../javascript/get_top_product.js"></script>
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
 

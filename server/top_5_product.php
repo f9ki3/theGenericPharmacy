@@ -1,0 +1,51 @@
+<?php
+// Include database configuration
+include '../config/config.php';
+
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the request method is POST or GET
+$requestMethod = $_SERVER['REQUEST_METHOD'];
+
+if ($requestMethod == 'POST' || $requestMethod == 'GET') {
+    // SQL query
+    $sql = "SELECT product_name, qty, sales
+    FROM sales
+    ORDER BY qty DESC
+    LIMIT 5;
+    ";
+
+    $result = $conn->query($sql);
+
+    $data = array();
+
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    } else {
+        echo json_encode(["message" => "No results found"]);
+        exit;
+    }
+
+    // Close connection
+    $conn->close();
+
+    // Return JSON encoded data
+    header('Content-Type: application/json');
+    echo json_encode($data);
+} else {
+    // Return an error if the request method is not POST or GET
+    header('Content-Type: application/json');
+    echo json_encode(["error" => "Invalid request method"]);
+    http_response_code(405); // Method Not Allowed
+    exit;
+}
+?>

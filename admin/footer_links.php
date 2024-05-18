@@ -44,4 +44,3 @@
     <script src="../javascript/accounts_list.js"></script>
     <script src="../javascript/user_logs.js"></script>
     
-    

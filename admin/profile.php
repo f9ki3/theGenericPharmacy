@@ -38,11 +38,11 @@
                             </div>
                         </div> -->
                         <div class="col-12 col-md-12 pe-5">
-                            <div class="d-flex flex-column justify-content-center">
-                                <div class="rounded" style="height: 200px; width: auto">
+                            <div class="d-flex flex-column justify-content-center align-items-center ">
+                                <div class="rounded" style="height: 200px; width: 100%;">
                                     <img class="rounded" style="object-fit: cover; width: 100%; height: 100%" src="../assets/img/wall1.jpeg" alt="">
                                 </div>
-                                <div style="width: 200px; height: 200px; border-radius: 100%; margin-top: -100px; margin-left: 50px">
+                                <div style="width: 200px; height: 200px; border-radius: 100%; margin-top: -100px; ">
                                     <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
                                 </div>
                             </div>

@@ -25,7 +25,7 @@
             <div class="row">
             <div class="rounded rounded-4 border p-4 mt-4" style="height: auto">
             <div class="d-flex flex-row justify-content-between align-items-center mb-4">
-                <h5 class="fw-bolder mb-3 ">Account List</h5>
+                <h3 class="fw-bolder mb-3 ">Account List</h3>
                 <button class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Account+</button>
             </div>
                     <div class="d-flex flex-column align-items-center justify-content-center" >

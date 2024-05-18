@@ -2,14 +2,6 @@
 // Include database configuration
 include '../config/config.php';
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Check if the request method is POST or GET
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 

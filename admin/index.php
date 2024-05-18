@@ -34,7 +34,16 @@
                                 <h3 class="fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
                             </div>
                             <div class="ps-4 ms-5 border-start">
-                                <p class="p-0 m-0"><?php echo $address?></p>
+                                <p class="p-0 m-0"><?php 
+                                if (strlen($address) > 30) {
+                                    // If yes, truncate the address to 30 characters and add ".."
+                                    $truncated_address = substr($address, 0, 30) . "..";
+                                    echo $truncated_address;
+                                } else {
+                                    // If not, simply echo the address
+                                    echo $address;
+                                }
+                                ?></p>
                                 <p class="p-0 m-0"><?php echo $email?></p>
                                 <p class="p-0 m-0"><?php echo $contact?></p>
                             </div>

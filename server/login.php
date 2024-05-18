@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = hash('sha256', $password);
 
         // Prepare and execute the query
-        $stmt = $conn->prepare("SELECT * FROM users WHERE user_name = ? AND user_password = ?");
-        $stmt->bind_param("ss", $username, $password);
+        $stmt = $conn->prepare("SELECT * FROM users WHERE user_name = ? OR user_email = ? AND user_password = ?");
+        $stmt->bind_param("sss", $username, $username, $password);
         $stmt->execute();
         $result = $stmt->get_result();
 

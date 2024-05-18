@@ -44,4 +44,5 @@
     <script src="../javascript/if_generate.js"></script>
     <script src="../javascript/accounts_list.js"></script>
     <script src="../javascript/user_logs.js"></script>
+    <script src="../javascript/delete_account.js"></script>
     

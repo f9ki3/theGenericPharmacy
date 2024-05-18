@@ -120,33 +120,33 @@
         </div>
         <div class="modal-body">
             <p class="m-0 pb-1">Username</p>
-            <input id="u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username">
+            <input id="edit_u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username">
             
             <div class="d-flex flex-row mb-2">
                 <div>
                     <p class="m-0 pb-1">First Name</p>
-                    <input id="f_name" style="width: 98%" class="form-control" type="text" placeholder="First Name">
+                    <input id="edit_f_name" style="width: 98%" class="form-control" type="text" placeholder="First Name">
                 </div>
                 <div>
                     <p class="m-0 pb-1">Last Name</p>
-                    <input id="l_name" style="width: 98%" class="form-control" type="text" placeholder="Last Name">
+                    <input id="edit_l_name" style="width: 98%" class="form-control" type="text" placeholder="Last Name">
                 </div>
             </div>
             <p class="m-0 pb-1">Address</p>
-            <input id="address" style="width: 96%" class="form-control" type="text" placeholder="Address">
+            <input id="edit_address" style="width: 96%" class="form-control" type="text" placeholder="Address">
             <div class="d-flex flex-row mt-2">
                 <div>
                     <p class="m-0 pb-1">Email</p>
-                    <input id="email_add" style="width: 98%" class="form-control" type="text" placeholder="Email">
+                    <input id="edit_email_add" style="width: 98%" class="form-control" type="text" placeholder="Email">
                 </div>
                 <div>
                     <p class="m-0 pb-1">Contact</p>
-                    <input id="contact_no" style="width: 98%" class="form-control" type="text" placeholder="Contact">
+                    <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Contact">
                 </div>
             </div>
             <div class="mb-3 mt-2" style="width: 96%">
                 <label for="formFile" class="form-label">Profile Picture</label>
-                <input id="profile_pic" class="form-control" type="file" id="formFile">
+                <input id="edit_profile_pic" class="form-control" type="file" id="formFile">
             </div>        
         </div>
         <div class="modal-footer">

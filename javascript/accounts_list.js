@@ -30,7 +30,14 @@ $(document).ready(function () {
             $('#accounts').on('click', '.edit-btn', function () {
                 var data = $('#accounts').DataTable().row($(this).parents('tr')).data();
                 // Trigger edit action
-                editUser(data);
+                $('#edit_u_name').val(data.user_name);
+                $('#edit_f_name').val(data.user_fname);
+                $('#edit_l_name').val(data.user_lname);
+                $('#edit_address').val(data.user_address);
+                $('#edit_email_add').val(data.user_email);
+                $('#edit_contact_no').val(data.user_contact);
+                $('#edit_profile_pic').val(data.user_profile);
+
             });
 
             // Change Password button click event

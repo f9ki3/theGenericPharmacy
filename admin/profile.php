@@ -29,15 +29,23 @@
                        <p><i <i class="bi me-2 bi-rocket-takeoff"></i> Page not found</p>
                     </div> -->
                     <div class="row pt-4">
-                        <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <!-- <div class="col-12 col-md-4 d-flex justify-content-center">
                             <div style="width: 200px; height: 200px; border-radius: 100%">
                                 <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
                             </div>
                             <div>
 
                             </div>
-                        </div>
-                        <div class="col-12 col-md-8 pe-5">
+                        </div> -->
+                        <div class="col-12 col-md-12 pe-5">
+                            <div class="d-flex flex-column justify-content-center">
+                                <div class="rounded" style="height: 200px; width: auto">
+                                    <img class="rounded" style="object-fit: cover; width: 100%; height: 100%" src="../assets/img/wall1.jpeg" alt="">
+                                </div>
+                                <div style="width: 200px; height: 200px; border-radius: 100%; margin-top: -100px; margin-left: 50px">
+                                    <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
+                                </div>
+                            </div>
                             <h3 class="mt-4 mb-0 p-0 fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
                             <p>Pharmacist</p>
                             <hr>

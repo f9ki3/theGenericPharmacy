@@ -50,7 +50,7 @@
                             <div style=" width: 120px; height: 120px">
                                 <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/Allyssa M. Feliciano.jpeg" alt="" >
                             </div>
-                            <h5 class="mt-3">Allyssa M. Feliciano.jpeg</h5>
+                            <h5 class="mt-3">Allyssa M. Feliciano</h5>
                             <p>Leader</p>
                             
                         </div>
@@ -82,7 +82,7 @@
                             <div style=" width: 120px; height: 120px">
                                 <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/Rhea Luz S. Hernandez.jpeg" alt="" >
                             </div>
-                            <h5 class="mt-3">Rhea Luz S. Hernandez.jpeg</h5>
+                            <h5 class="mt-3">Rhea Luz S. Hernandez</h5>
                             <p>Member</p>
                             
                         </div>

@@ -6,17 +6,10 @@
 // $password = '';
 
 $host = 'localhost'; // or your database host
-$dbname = 'tgp';
-$username = 'root';
-$password = '';
+$dbname = 'u552678172_pharmasims';
+$username = 'u552678172_pharmasims';
+$password = '^+Fp>6d?O2';
 
-
-DATABASE CREDENTIAL:
-
-database: u552678172_pharmasims
-users: u552678172_pharmasims
-password:
-^+Fp>6d?O2
 // Create connection
 $conn = new mysqli($host, $username, $password, $dbname);
 

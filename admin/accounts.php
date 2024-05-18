@@ -119,6 +119,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+            <input type="hidden" id="edit_id">
             <p class="m-0 pb-1">Username</p>
             <input id="edit_u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username">
             
@@ -151,7 +152,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
-            <button id="create" type="button" class="btn btn-danger">Create</button>
+            <button id="update" type="button" class="btn btn-danger">Update</button>
         </div>
         </div>
     </div>

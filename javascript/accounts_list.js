@@ -30,6 +30,7 @@ $(document).ready(function () {
             $('#accounts').on('click', '.edit-btn', function () {
                 var data = $('#accounts').DataTable().row($(this).parents('tr')).data();
                 // Trigger edit action
+                $('#edit_id').val(data.id)
                 $('#edit_u_name').val(data.user_name);
                 $('#edit_f_name').val(data.user_fname);
                 $('#edit_l_name').val(data.user_lname);

@@ -79,11 +79,7 @@
                         <h5 class="fw-bolder">10. What should I do if I have a question about my medication or health condition?</h5 class="fw-bolder">
                         <p>Our pharmacists are available to answer any questions you may have about your medications or health concerns. Feel free to approach any of our staff members or contact us through our website or hotline for assistance.</p>
                     </div>
-
-                   
             </div>
-
-
         </div>
 
     </div>

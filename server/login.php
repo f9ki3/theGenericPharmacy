@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_contact'] = $user['user_contact'];
             $_SESSION['user_address'] = $user['user_address'];
             $_SESSION['user_profile'] = $user['user_profile'];
-            $_SESSION['user_type'] = $user['user_type'];
 
             // Insert user login log
             $stmt_log = $conn->prepare("INSERT INTO `user_logs` (`id`, `date`, `user_id`, `status`) VALUES (NULL, NOW(), ?, 'login')");

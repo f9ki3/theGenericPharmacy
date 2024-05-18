@@ -26,7 +26,7 @@ $(document).ready(function() {
                 success: function(response) {
                     $('#loading').hide();
                     $('#login_btn').show();
-
+                        console.log(response)
                     if (response === "1") {
                         $("#loader").show();
                         // Show the login-div

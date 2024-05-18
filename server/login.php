@@ -33,6 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_profile'] = $user['user_profile'];
             $_SESSION['user_type'] = $user['user_type'];
 
+            // Insert user login log
+            $stmt_log = $conn->prepare("INSERT INTO `user_logs` (`id`, `date`, `user_id`, `status`) VALUES (NULL, NOW(), ?, 'login')");
+            $stmt_log->bind_param("i", $user['id']);
+            $stmt_log->execute();
+
             echo "1";
         } else {
             // Return failure message
@@ -41,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Close the statement and database connection
         $stmt->close();
+        $stmt_log->close();
         $conn->close();
     } else {
         // Return failure message if username or password is not set

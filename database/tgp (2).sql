@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2024 at 09:41 PM
+-- Generation Time: May 18, 2024 at 11:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -1333,21 +1333,47 @@ CREATE TABLE `users` (
   `user_lname` varchar(255) DEFAULT NULL,
   `user_contact` varchar(20) DEFAULT NULL,
   `user_address` text DEFAULT NULL,
-  `user_profile` text DEFAULT NULL,
-  `user_type` int(11) NOT NULL,
-  `user_property_id` int(11) DEFAULT NULL,
-  `user_status` int(11) DEFAULT 0,
-  `user_started` int(11) DEFAULT 0,
-  `user_otp_status` int(1) NOT NULL
+  `user_profile` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`, `user_fname`, `user_lname`, `user_contact`, `user_address`, `user_profile`, `user_type`, `user_property_id`, `user_status`, `user_started`, `user_otp_status`) VALUES
-(1, 'rhea_123', 'papik@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Rhea', 'Luz', '09120912091', 'Barangay Pinagpala, Loyal St. ', 'rhea.jpg', 0, 0, 0, 0, 1),
-(2, 'allysa_123', 'allysa@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Allyssa', 'Hernandez', '09450945562', 'Malolos, Bulacan', 'allysa.png', 0, 0, 0, 0, 0);
+INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`, `user_fname`, `user_lname`, `user_contact`, `user_address`, `user_profile`) VALUES
+(1, 'rhea_123', 'rhea@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Rhea', 'Luz', '09120912091', 'Barangay Pinagpala, Loyal St. ', 'rhea.jpg'),
+(2, 'allysa_123', 'allysa@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Allyssa', 'Hernandez', '09450945562', 'Malolos, Bulacan', 'allysa.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_logs`
+--
+
+CREATE TABLE `user_logs` (
+  `id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `user_logs`
+--
+
+INSERT INTO `user_logs` (`id`, `date`, `user_id`, `status`) VALUES
+(3, '2024-05-18 16:07:35', 1, 'login'),
+(4, '2024-05-18 16:07:56', 1, 'login'),
+(5, '2024-05-18 16:09:29', 1, 'login'),
+(6, '2024-05-18 16:11:55', 1, 'login'),
+(7, '2024-05-18 16:12:25', 1, 'login'),
+(8, '2024-05-18 16:12:29', 1, 'logout'),
+(9, '2024-05-18 16:16:35', 1, 'login'),
+(10, '2024-05-18 16:45:49', 1, 'login'),
+(11, '2024-05-18 16:46:51', 1, 'logout'),
+(12, '2024-05-18 16:53:18', 1, 'login'),
+(13, '2024-05-18 16:58:59', 1, 'logout'),
+(14, '2024-05-18 17:09:43', 1, 'login');
 
 --
 -- Indexes for dumped tables
@@ -1374,6 +1400,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `user_email` (`user_email`);
 
 --
+-- Indexes for table `user_logs`
+--
+ALTER TABLE `user_logs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1387,7 +1419,13 @@ ALTER TABLE `maintenance`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `user_logs`
+--
+ALTER TABLE `user_logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

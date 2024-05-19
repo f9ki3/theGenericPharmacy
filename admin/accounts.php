@@ -36,6 +36,7 @@
                             <thead>
                                 <tr>
                                     <th>Username</th>
+                                    <th>Profile</th>
                                     <th>First Name</th>
                                     <th>last name</th>
                                     <th>Address</th>
@@ -187,7 +188,10 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <h4 class="text-center p-3"><i class="bi bi-trash3 me-2"></i> Delete this account?<h4>
+            <p>New Password</p>
+            <input id="edit_contact_no" style="width: 98%" class="form-control mb-3" type="text" placeholder="Enter your new password">
+            <p>Confirm Password</p>
+            <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Confirm your new password">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>

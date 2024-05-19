@@ -9,6 +9,12 @@ $(document).ready(function () {
                 data: data,
                 columns: [
                     { data: 'user_name' },
+                    {
+                        data: 'user_profile',
+                        render: function (data, type, row) {
+                            return '<img src="../uploads/' + data + '" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 100%" />';
+                        }
+                    },
                     { data: 'user_fname' },
                     { data: 'user_lname' },
                     { data: 'user_address' },
@@ -21,24 +27,22 @@ $(document).ready(function () {
                     }
                 ],
                 columnDefs: [
-                    { orderable: false, targets: [4, 5, 6] } // Disable sorting for the email and contact columns
+                    { orderable: false, targets: [4, 5, 6, 7] } // Disable sorting for the email, contact, and action columns
                 ]
             });
-            
-            
+
             // Edit button click event
             $('#accounts').on('click', '.edit-btn', function () {
                 var data = $('#accounts').DataTable().row($(this).parents('tr')).data();
                 // Trigger edit action
-                $('#edit_id').val(data.id)
+                $('#edit_id').val(data.id);
                 $('#edit_u_name').val(data.user_name);
                 $('#edit_f_name').val(data.user_fname);
                 $('#edit_l_name').val(data.user_lname);
                 $('#edit_address').val(data.user_address);
                 $('#edit_email_add').val(data.user_email);
                 $('#edit_contact_no').val(data.user_contact);
-                $('#edit_profile_pic').val(data.user_profile);
-
+                $('#edit_profile_pic').attr('src', data.user_profile);
             });
 
             // Change Password button click event
@@ -52,8 +56,7 @@ $(document).ready(function () {
             $('#accounts').on('click', '.delete-btn', function () {
                 var data = $('#accounts').DataTable().row($(this).parents('tr')).data();
                 // Trigger delete action
-                $('#deleted_id').val(data.id)
-                
+                $('#deleted_id').val(data.id);
             });
         },
         error: function (xhr, status, error) {

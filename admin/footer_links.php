@@ -46,4 +46,5 @@
     <script src="../javascript/user_logs.js"></script>
     <script src="../javascript/delete_account.js"></script>
     <script src="../javascript/get_the_account_update.js"></script>
+    <script src="../javascript/change_password.js"></script>
     

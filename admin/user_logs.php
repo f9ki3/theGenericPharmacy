@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Tamer</title>
+    <title>TGP</title>
     <?php include 'session.php'?>
     <?php include 'header_links.php'?>
 </head>

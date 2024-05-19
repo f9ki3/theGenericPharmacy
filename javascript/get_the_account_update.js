@@ -24,7 +24,7 @@ $(document).ready(function() {
             processData: false, // Prevent jQuery from automatically transforming the data into a query string
             contentType: false, // Prevent jQuery from overriding the Content-Type header
             success: function(response) {
-                alertify.success('Wla ih Ma14l quo Parin : (!');
+                alertify.success('Updated Successfully!');
                 console.log(response);
                 // Delay the reload by 3 seconds
                 setTimeout(function() {

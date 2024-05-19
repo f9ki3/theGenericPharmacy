@@ -31,7 +31,20 @@
                             </div>
                             <div class="ps-3">
                                 <h5 class="">Pharmacist </h5>
-                                <h3 class="fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
+                                <h3 class="fw-bolder">
+                                <?php
+                                $name = $fname . ' ' . $lname; // Use dots (.) for concatenation instead of plus signs (+)
+                                if (strlen($name) > 17) {
+                                    // If yes, truncate the name to 30 characters and add ".."
+                                    $truncated_name = substr($name, 0, 17) . "..";
+                                    echo $truncated_name;
+                                } else {
+                                    // If not, simply echo the name
+                                    echo $name;
+                                }
+                                ?>
+
+                            </h3>
                             </div>
                             <div class="ps-4 ms-5 border-start">
                                 <p class="p-0 m-0"><?php 

@@ -188,14 +188,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+            <input type="hidden" id="edit_id_pass">
             <p>New Password</p>
-            <input id="edit_contact_no" style="width: 98%" class="form-control mb-3" type="text" placeholder="Enter your new password">
+            <input id="new_pass" style="width: 98%" class="form-control mb-3" type="text" placeholder="Enter your new password">
             <p>Confirm Password</p>
-            <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Confirm your new password">
+            <input id="confirm_pass" style="width: 98%" class="form-control" type="text" placeholder="Confirm your new password">
         </div>
         <div class="modal-footer">
             <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button id="change_password" type="button" class="btn btn-danger">Chage Password</button>
         </div>
         </div>
     </div>

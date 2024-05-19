@@ -38,7 +38,7 @@
                                     <th>Username</th>
                                     <th>Profile</th>
                                     <th>First Name</th>
-                                    <th>last name</th>
+                                    <th>Last Name</th>
                                     <th>Address</th>
                                     <th>Email</th>
                                     <th>Contact</th>

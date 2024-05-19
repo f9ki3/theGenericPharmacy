@@ -46,8 +46,16 @@
                                     <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
                                 </div>
                             </div>
-                            <h3 class="mt-4 mb-0 p-0 fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
-                            <p>Pharmacist</p>
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="w-75">
+                                        <h3 class="mt-4 mb-0 p-0 fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
+                                        <p>Pharmacist</p>
+                                    </div>
+                                    <div class="w-75 text-end">
+                                        <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#edit">Edit</button>
+                                        <button class="btn btn-sm border-danger text-danger" data-bs-toggle="modal" data-bs-target="#change_pass">Cange Password</button>
+                                    </div>
+                                </div>
                             <hr>
 
                                 <h5 class="mb-3">Profile</h5>
@@ -74,6 +82,76 @@
         </div>
 
     </div>
+
+    <div class="modal mt-5 fade" id="edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content w-100">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" id="edit_id">
+            <p class="m-0 pb-1">Username</p>
+            <input id="edit_u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username">
+            
+            <div class="d-flex flex-row mb-2">
+                <div>
+                    <p class="m-0 pb-1">First Name</p>
+                    <input id="edit_f_name" style="width: 98%" class="form-control" type="text" placeholder="First Name">
+                </div>
+                <div>
+                    <p class="m-0 pb-1">Last Name</p>
+                    <input id="edit_l_name" style="width: 98%" class="form-control" type="text" placeholder="Last Name">
+                </div>
+            </div>
+            <p class="m-0 pb-1">Address</p>
+            <input id="edit_address" style="width: 96%" class="form-control" type="text" placeholder="Address">
+            <div class="d-flex flex-row mt-2">
+                <div>
+                    <p class="m-0 pb-1">Email</p>
+                    <input id="edit_email_add" style="width: 98%" class="form-control" type="text" placeholder="Email">
+                </div>
+                <div>
+                    <p class="m-0 pb-1">Contact</p>
+                    <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Contact">
+                </div>
+            </div>
+            <div class="mb-3 mt-2" style="width: 96%">
+                <label for="formFile" class="form-label">Profile Picture</label>
+                <input id="edit_profile_pic" class="form-control" type="file" id="formFile">
+            </div>        
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
+            <button id="update" type="button" class="btn btn-danger">Update</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade mt-5" id="change_pass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="edit_id_pass">
+                <p>New Password</p>
+                <input id="new_pass" style="width: 98%" class="form-control mb-3" type="text" placeholder="Enter your new password">
+                <p>Confirm Password</p>
+                <input id="confirm_pass" style="width: 98%" class="form-control" type="text" placeholder="Confirm your new password">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
+                <button id="change_password" type="button" class="btn btn-danger">Chage Password</button>
+            </div>
+            </div>
+        </div>
+        </div>
     <?php include 'footer_links.php'?>
 </body>
 </html>

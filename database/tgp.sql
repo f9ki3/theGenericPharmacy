@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 18, 2024 at 11:54 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: May 19, 2024 at 06:19 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -1341,8 +1341,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`, `user_fname`, `user_lname`, `user_contact`, `user_address`, `user_profile`) VALUES
-(1, 'rhea_123', 'rhea@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Rhea', 'Luz', '09120912091', 'Barangay Pinagpala, Loyal St. ', 'rhea.jpg'),
-(2, 'allysa_123', 'allysa@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Allyssa', 'Hernandez', '09450945562', 'Malolos, Bulacan', 'allysa.png');
+(1, 'rhea_123', 'rhea@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Rhea', 'Luz', '09120912091', 'Barangay Pinagpala, Loyal St. ', 'Rhea Luz S. Hernandez.jpeg'),
+(36, 'fyke_123', 'fyke@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Fykes', 'Lleva', '09120912091', 'Masisipag St, Mandaluyong City Metro Manila', 'profile.jpg'),
+(38, 'allyssa', 'allyssa_123@gmail.com', '9997fac4feec01f8cbc2631d343dd6d8f22a0bbfb0e97a27ceb930b27002822f', 'Allyssa', 'Feliciano', '09120912091', 'barangay Loyalist, Marilao, Bulacan\'t', 'Allyssa M. Feliciano.jpeg'),
+(39, 'angelo_123', 'angelo_123@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Angelo ', 'Castro', '09120912091', 'Barangay Tagay San Miguel, Bulacan', 'Angelo Miguel Castro.jpeg'),
+(40, 'doxa_cat123', 'doxa@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Doxa ', 'Quilingan', '09459834982', 'Barangay Walang Quini-Quilingan', 'Doxa V. Quilingan.jpeg'),
+(41, 'benedict_mabait123', 'benedict_mabait123@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', ' John', 'Benidict', '09120921091', 'Studio Ghibli, Subdivision, Valenzuela City', 'John Benedict R. Mopera.jpeg');
 
 -- --------------------------------------------------------
 
@@ -1373,7 +1377,137 @@ INSERT INTO `user_logs` (`id`, `date`, `user_id`, `status`) VALUES
 (11, '2024-05-18 16:46:51', 1, 'logout'),
 (12, '2024-05-18 16:53:18', 1, 'login'),
 (13, '2024-05-18 16:58:59', 1, 'logout'),
-(14, '2024-05-18 17:09:43', 1, 'login');
+(14, '2024-05-18 17:09:43', 1, 'login'),
+(15, '2024-05-18 10:33:01', 1, 'login'),
+(16, '2024-05-18 10:47:29', 1, 'logout'),
+(17, '2024-05-18 11:03:04', 1, 'login'),
+(18, '2024-05-18 11:03:04', 1, 'login'),
+(19, '2024-05-18 11:03:20', 1, 'login'),
+(20, '2024-05-18 11:05:45', 1, 'logout'),
+(21, '2024-05-18 11:05:59', 1, 'login'),
+(22, '2024-05-18 11:05:59', 1, 'login'),
+(23, '2024-05-18 11:06:56', 1, 'logout'),
+(24, '2024-05-18 11:07:27', 1, 'login'),
+(25, '2024-05-18 11:07:27', 1, 'login'),
+(26, '2024-05-18 11:07:32', 1, 'login'),
+(27, '2024-05-18 11:08:39', 1, 'login'),
+(28, '2024-05-18 11:08:39', 1, 'login'),
+(29, '2024-05-18 11:09:47', 1, 'login'),
+(30, '2024-05-18 11:09:52', 1, 'login'),
+(31, '2024-05-18 11:10:58', 1, 'logout'),
+(32, '2024-05-18 11:11:59', 1, 'login'),
+(33, '2024-05-18 11:11:59', 1, 'login'),
+(34, '2024-05-18 11:13:16', 1, 'logout'),
+(35, '2024-05-18 11:14:00', 1, 'login'),
+(36, '2024-05-18 11:14:00', 1, 'login'),
+(37, '2024-05-18 11:14:32', 1, 'logout'),
+(38, '2024-05-18 11:15:21', 1, 'login'),
+(39, '2024-05-18 11:15:21', 1, 'login'),
+(40, '2024-05-18 11:15:43', 1, 'logout'),
+(41, '2024-05-18 11:15:57', 1, 'login'),
+(42, '2024-05-18 11:15:57', 1, 'login'),
+(43, '2024-05-18 11:16:40', 1, 'logout'),
+(44, '2024-05-18 11:17:08', 1, 'login'),
+(45, '2024-05-18 12:02:40', 1, 'logout'),
+(46, '2024-05-18 12:03:00', 1, 'login'),
+(47, '2024-05-18 12:03:00', 1, 'login'),
+(48, '2024-05-18 12:08:01', 1, 'logout'),
+(49, '2024-05-18 12:31:42', 1, 'login'),
+(50, '2024-05-18 13:22:11', 1, 'logout'),
+(51, '2024-05-18 13:22:26', 1, 'login'),
+(52, '2024-05-18 13:22:27', 1, 'login'),
+(53, '2024-05-18 15:13:24', 1, 'logout'),
+(54, '2024-05-18 15:13:35', 31, 'login'),
+(55, '2024-05-18 16:43:38', 31, 'logout'),
+(56, '2024-05-18 16:46:10', 1, 'login'),
+(57, '2024-05-18 16:46:11', 1, 'login'),
+(58, '2024-05-18 17:06:49', 1, 'login'),
+(59, '2024-05-18 17:06:49', 1, 'login'),
+(60, '2024-05-18 17:46:53', 1, 'logout'),
+(61, '2024-05-18 17:47:48', 1, 'login'),
+(62, '2024-05-18 17:47:48', 1, 'login'),
+(63, '2024-05-18 17:48:40', 1, 'logout'),
+(64, '2024-05-18 17:48:58', 1, 'login'),
+(65, '2024-05-18 17:48:58', 1, 'login'),
+(66, '2024-05-18 17:50:15', 1, 'logout'),
+(67, '2024-05-18 17:51:49', 35, 'login'),
+(68, '2024-05-18 17:51:49', 35, 'login'),
+(69, '2024-05-18 17:53:42', 35, 'logout'),
+(70, '2024-05-18 17:55:14', 31, 'login'),
+(71, '2024-05-18 17:55:14', 31, 'login'),
+(72, '2024-05-18 17:55:21', 31, 'logout'),
+(73, '2024-05-18 17:59:21', 31, 'login'),
+(74, '2024-05-18 17:59:22', 31, 'login'),
+(75, '2024-05-18 19:16:40', 31, 'logout'),
+(76, '2024-05-18 19:17:06', 1, 'login'),
+(77, '2024-05-18 19:17:06', 1, 'login'),
+(78, '2024-05-18 20:10:58', 1, 'logout'),
+(79, '2024-05-18 20:11:09', 36, 'login'),
+(80, '2024-05-18 20:11:09', 36, 'login'),
+(81, '2024-05-18 20:15:55', 36, 'logout'),
+(82, '2024-05-18 20:16:06', 2, 'login'),
+(83, '2024-05-18 20:16:06', 2, 'login'),
+(84, '2024-05-18 20:17:36', 2, 'logout'),
+(85, '2024-05-18 20:17:48', 36, 'login'),
+(86, '2024-05-18 20:17:48', 36, 'login'),
+(87, '2024-05-18 21:37:42', 36, 'logout'),
+(88, '2024-05-18 21:37:54', 1, 'login'),
+(89, '2024-05-18 21:37:54', 1, 'login'),
+(90, '2024-05-18 23:08:20', 1, 'login'),
+(91, '2024-05-18 23:08:20', 1, 'login'),
+(92, '2024-05-19 20:44:56', 1, 'login'),
+(93, '2024-05-19 20:44:56', 1, 'login'),
+(94, '2024-05-19 20:45:28', 1, 'logout'),
+(95, '2024-05-19 20:45:42', 1, 'login'),
+(96, '2024-05-19 20:45:42', 1, 'login'),
+(97, '2024-05-19 20:46:24', 1, 'logout'),
+(98, '2024-05-19 20:46:36', 2, 'login'),
+(99, '2024-05-19 20:46:36', 2, 'login'),
+(100, '2024-05-19 20:52:54', 2, 'logout'),
+(101, '2024-05-19 20:53:16', 2, 'login'),
+(102, '2024-05-19 20:53:16', 2, 'login'),
+(103, '2024-05-19 21:04:36', 2, 'login'),
+(104, '2024-05-19 21:04:36', 2, 'login'),
+(105, '2024-05-19 21:15:09', 1, 'login'),
+(106, '2024-05-19 21:15:09', 1, 'login'),
+(107, '2024-05-19 21:44:03', 1, 'logout'),
+(108, '2024-05-19 21:44:13', 41, 'login'),
+(109, '2024-05-19 21:44:33', 41, 'logout'),
+(110, '2024-05-19 21:44:46', 39, 'login'),
+(111, '2024-05-19 21:44:46', 39, 'login'),
+(112, '2024-05-19 21:45:24', 39, 'logout'),
+(113, '2024-05-19 21:45:42', 39, 'login'),
+(114, '2024-05-19 21:45:42', 39, 'login'),
+(115, '2024-05-19 21:53:04', 1, 'login'),
+(116, '2024-05-19 21:53:05', 1, 'login'),
+(117, '2024-05-19 22:06:13', 1, 'login'),
+(118, '2024-05-19 22:06:13', 1, 'login'),
+(119, '2024-05-19 22:15:14', 1, 'logout'),
+(120, '2024-05-19 22:15:24', 38, 'login'),
+(121, '2024-05-19 22:16:16', 1, 'login'),
+(122, '2024-05-19 22:16:16', 1, 'login'),
+(123, '2024-05-19 22:17:26', 1, 'logout'),
+(124, '2024-05-19 22:18:03', 38, 'login'),
+(125, '2024-05-19 22:43:02', 38, 'logout'),
+(126, '2024-05-19 22:43:48', 38, 'login'),
+(127, '2024-05-19 22:43:48', 38, 'login'),
+(128, '2024-05-19 22:47:36', 38, 'logout'),
+(129, '2024-05-19 22:47:54', 38, 'login'),
+(130, '2024-05-19 22:47:54', 38, 'login'),
+(131, '2024-05-19 23:31:28', 36, 'login'),
+(132, '2024-05-19 23:31:28', 36, 'login'),
+(133, '2024-05-19 23:32:25', 36, 'logout'),
+(134, '2024-05-19 23:32:36', 36, 'login'),
+(135, '2024-05-19 23:32:36', 36, 'login'),
+(136, '2024-05-19 23:36:08', 36, 'logout'),
+(137, '2024-05-19 23:36:19', 36, 'login'),
+(138, '2024-05-19 23:36:19', 36, 'login'),
+(139, '2024-05-19 23:36:54', 36, 'logout'),
+(140, '2024-05-19 23:37:05', 36, 'login'),
+(141, '2024-05-19 23:37:05', 36, 'login'),
+(142, '2024-05-19 23:37:37', 36, 'logout'),
+(143, '2024-05-19 23:37:48', 36, 'login'),
+(144, '2024-05-19 23:37:48', 36, 'login');
 
 --
 -- Indexes for dumped tables
@@ -1395,9 +1529,7 @@ ALTER TABLE `sales`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_name` (`user_name`),
-  ADD UNIQUE KEY `user_email` (`user_email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_logs`
@@ -1419,13 +1551,13 @@ ALTER TABLE `maintenance`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `user_logs`
 --
 ALTER TABLE `user_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

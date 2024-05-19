@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if (move_uploaded_file($_FILES["edit_profile_pic"]["tmp_name"], $target_file)) {
                             // File successfully uploaded
                             $edit_profile_pic = basename($_FILES["edit_profile_pic"]["name"]);
+                            
                             // Construct the SQL query to update data in the 'users' table
                             $sql = "UPDATE users SET user_name=?, user_fname=?, user_lname=?, user_email=?, user_contact=?, user_address=?, user_profile=? WHERE id=?";
 

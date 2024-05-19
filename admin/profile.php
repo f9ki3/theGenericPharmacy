@@ -91,30 +91,30 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <input type="hidden" id="edit_id">
+            <input type="hidden" id="edit_id" value="<?php echo $id?>">
             <p class="m-0 pb-1">Username</p>
-            <input id="edit_u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username">
+            <input id="edit_u_name" style="width: 96%" class="form-control" type="text" placeholder="Enter Username" value="<?php echo $username?>">
             
             <div class="d-flex flex-row mb-2">
                 <div>
                     <p class="m-0 pb-1">First Name</p>
-                    <input id="edit_f_name" style="width: 98%" class="form-control" type="text" placeholder="First Name">
+                    <input id="edit_f_name" style="width: 98%" class="form-control" type="text" placeholder="First Name" value="<?php echo $fname?>">
                 </div>
                 <div>
                     <p class="m-0 pb-1">Last Name</p>
-                    <input id="edit_l_name" style="width: 98%" class="form-control" type="text" placeholder="Last Name">
+                    <input id="edit_l_name" style="width: 98%" class="form-control" type="text" placeholder="Last Name" value="<?php echo $lname?>">
                 </div>
             </div>
             <p class="m-0 pb-1">Address</p>
-            <input id="edit_address" style="width: 96%" class="form-control" type="text" placeholder="Address">
+            <input id="edit_address" style="width: 96%" class="form-control" type="text" placeholder="Address" value="<?php echo $address?>">
             <div class="d-flex flex-row mt-2">
                 <div>
                     <p class="m-0 pb-1">Email</p>
-                    <input id="edit_email_add" style="width: 98%" class="form-control" type="text" placeholder="Email">
+                    <input id="edit_email_add" style="width: 98%" class="form-control" type="text" placeholder="Email" value="<?php echo $email?>">
                 </div>
                 <div>
                     <p class="m-0 pb-1">Contact</p>
-                    <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Contact">
+                    <input id="edit_contact_no" style="width: 98%" class="form-control" type="text" placeholder="Contact" value="<?php echo $contact?>">
                 </div>
             </div>
             <div class="mb-3 mt-2" style="width: 96%">
@@ -139,7 +139,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="edit_id_pass">
+                <input type="hidden" id="edit_id_pass" value="<?php echo $id?>">
                 <p>New Password</p>
                 <input id="new_pass" style="width: 98%" class="form-control mb-3" type="text" placeholder="Enter your new password">
                 <p>Confirm Password</p>

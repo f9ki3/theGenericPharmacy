@@ -1,9 +1,14 @@
 <?php
 // Database credentials
+// $host = 'localhost'; // or your database host
+// $dbname = 'tgp';
+// $username = 'root';
+// $password = '';
+
 $host = 'localhost'; // or your database host
-$dbname = 'tgp';
-$username = 'root';
-$password = '';
+$dbname = 'u552678172_tgp';
+$username = 'u552678172_tgp';
+$password = 'iO5$3al~Mz^';
 
 // $host = 'localhost'; // or your database host
 // $dbname = 'u552678172_pharmasims';

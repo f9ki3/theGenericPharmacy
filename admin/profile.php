@@ -7,7 +7,7 @@
     <?php include 'header_links.php'?>
 </head>
 <body>
-    <div class="container">
+    <div class="container main-content">
         <!-- <div id="loader" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
             <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
                 <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
@@ -21,34 +21,22 @@
             <div class="col-12 col-md-2">
                 <?php include 'navbar.php'?>
             </div>
-            <div class="col-12 col-md-10 p-5">
+            <div class="col-12 col-md-10 ">
             <div class="row">
-            <div class="rounded rounded-4 border p-4 pb-5 shadow mt-4" style="height: auto">
-                    <!-- <div class="d-flex flex-column align-items-center justify-content-center" style="height: 500px">
-                       <h1 style="font-size: 100px">404</h1>
-                       <p><i <i class="bi me-2 bi-rocket-takeoff"></i> Page not found</p>
-                    </div> -->
-                    <div class="row pt-4">
-                        <!-- <div class="col-12 col-md-4 d-flex justify-content-center">
-                            <div style="width: 200px; height: 200px; border-radius: 100%">
-                                <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
-                            </div>
-                            <div>
-
-                            </div>
-                        </div> -->
-                        <div class="col-12 col-md-12 pe-5">
+            <div class="rounded rounded-4  pb-5" style="height: auto">
+                    <div class="row content-main">    
+                        <div class="col-12 col-md-12">
                             <div class="d-flex flex-column justify-content-center align-items-center ">
                                 <div class="rounded" style="height: 200px; width: 100%;">
                                     <img class="rounded" style="object-fit: cover; width: 100%; height: 100%" src="../assets/img/wall1.jpeg" alt="">
                                 </div>
-                                <div style="width: 200px; height: 200px; border-radius: 100%; margin-top: -100px; ">
+                                <div class="profile">
                                     <img style="width: 100%; height: 100%; object-fit: cover; border-radius: 100%" src="../uploads/<?php echo $profile?>" alt="">
                                 </div>
                             </div>
                                 <div class="d-flex flex-row align-items-center">
                                     <div class="w-75">
-                                        <h3 class="mt-4 mb-0 p-0 fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
+                                        <h3 class=" mt-4 mb-0 p-0 fw-bolder"><?php echo $fname, ' ', $lname;?></h3>
                                         <p>Pharmacist</p>
                                     </div>
                                     <div class="w-75 text-end">

@@ -29,7 +29,27 @@
             </div> -->
             <div class="col-12 col-md-8" style="padding-top: 150px; padding-left: 70px">
                 <h1 class="fw-bolder" style="font-size: 50px"><b class="text-danger">T</b>G<b class="text-danger">P</b>agpagaling ng Pilipinas!</h1>
-                <img src="uploads/SG.png" alt="" style="width: 700px; height: auto">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="uploads/SG.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="uploads/tgp3.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="uploads/tgpp1.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
             </div>
             <div class="col-12 col-md-4 pt-5 ">
                     <form id="login_form">

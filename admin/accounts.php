@@ -21,17 +21,15 @@
             <div class="col-12 col-md-2">
                 <?php include 'navbar.php'?>
             </div>
-            <div class="col-12 col-md-10 p-5">
-            <div class="row">
-            <div class="rounded rounded-4 border p-4 mt-4" style="height: auto">
+            <div class="col-12 col-md-10 ">
+            <div class="row content-main">
+            <div class="rounded rounded-4 border p-4" style="height: auto">
             <div class="d-flex flex-row justify-content-between align-items-center mb-4">
                 <h3 class="fw-bolder mb-3 ">Account List</h3>
                 <button class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Account+</button>
             </div>
-                    <div>
-                       <!-- <h1 style="font-size: 100px">404</h1>
-                       <p><i <i class="bi me-2 bi-rocket-takeoff"></i> Page not found</p>
-                         -->
+                    <div class="table-responsive">
+
                          <table id="accounts" class="display table-striped" style="font-size: 12px">
                             <thead>
                                 <tr>

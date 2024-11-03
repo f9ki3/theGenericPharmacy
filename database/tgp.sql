@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 19, 2024 at 06:19 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost
+-- Generation Time: Nov 03, 2024 at 05:43 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -1342,7 +1342,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `user_name`, `user_email`, `user_password`, `user_fname`, `user_lname`, `user_contact`, `user_address`, `user_profile`) VALUES
 (1, 'rhea_123', 'rhea@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Rhea', 'Luz', '09120912091', 'Barangay Pinagpala, Loyal St. ', 'Rhea Luz S. Hernandez.jpeg'),
-(36, 'fyke_123', 'fyke@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Fykes', 'Lleva', '09120912091', 'Masisipag St, Mandaluyong City Metro Manila', 'profile.jpg'),
 (38, 'allyssa', 'allyssa_123@gmail.com', '9997fac4feec01f8cbc2631d343dd6d8f22a0bbfb0e97a27ceb930b27002822f', 'Allyssa', 'Feliciano', '09120912091', 'barangay Loyalist, Marilao, Bulacan\'t', 'Allyssa M. Feliciano.jpeg'),
 (39, 'angelo_123', 'angelo_123@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Angelo ', 'Castro', '09120912091', 'Barangay Tagay San Miguel, Bulacan', 'Angelo Miguel Castro.jpeg'),
 (40, 'doxa_cat123', 'doxa@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'Doxa ', 'Quilingan', '09459834982', 'Barangay Walang Quini-Quilingan', 'Doxa V. Quilingan.jpeg'),
@@ -1507,7 +1506,9 @@ INSERT INTO `user_logs` (`id`, `date`, `user_id`, `status`) VALUES
 (141, '2024-05-19 23:37:05', 36, 'login'),
 (142, '2024-05-19 23:37:37', 36, 'logout'),
 (143, '2024-05-19 23:37:48', 36, 'login'),
-(144, '2024-05-19 23:37:48', 36, 'login');
+(144, '2024-05-19 23:37:48', 36, 'login'),
+(145, '2024-11-04 00:41:54', 1, 'login'),
+(146, '2024-11-04 00:41:54', 1, 'login');
 
 --
 -- Indexes for dumped tables
@@ -1557,7 +1558,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_logs`
 --
 ALTER TABLE `user_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

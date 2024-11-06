@@ -15,28 +15,45 @@
             <div class="col-12 col-md-10">
             <div class="row content-main">
             <div class="rounded rounded-4 border p-4" style="height: auto">
-            <h3 class="fw-bolder mb-3">Sales Listing</h3>
-                    <div class="table-responsive">
-                       <!-- <h1 style="font-size: 100px">404</h1>
-                       <p><i <i class="bi me-2 bi-rocket-takeoff"></i> Page not found</p>
-                         -->
-                         <table id="transactionTable" class="display table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Product Name</th>
-                                    <th>Type</th>
-                                    <th>Qty</th>
-                                    <th>Sales</th>
-                                    <th>Cost</th>
-                                    <th>Profit</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="d-flex flex-row mb-3 justify-content-between align-items-center">
+                    <h5 class="fw-bolder" id="categoryTitle">Allergy and Inflammation</h5>
+                    <select name="" class="form-control w-25" id="categorySelect">
+                        <option value="Allergy and Inflammation">Allergy and Inflammation</option>
+                        <option value="Antibiotics and Antimicrobials">Antibiotics and Antimicrobials</option>
+                        <option value="CardioVascular">CardioVascular</option>
+                        <option value="Essentials">Essentials</option>
+                        <option value="Gastrointestinal Medication">Gastrointestinal Medication</option>
+                        <option value="Hematologic Medication">Hematologic Medication</option>
+                        <option value="Metabolic Disorders Medications">Metabolic Disorders Medications</option>
+                        <option value="Musculoskeletal">Musculoskeletal</option>
+                        <option value="Necessities">Necessities</option>
+                        <option value="Neurological Medications">Neurological Medications</option>
+                        <option value="Pain Relief Medications">Pain Relief Medications</option>
+                        <option value="Renal & Urinary Medications">Renal & Urinary Medications</option>
+                        <option value="Respiratory Medications">Respiratory Medications</option>
+                    </select>
+                </div>
+                <div class="table-responsive">
+                    <table id="SalesProducts" class="display table-striped">
+                        <thead>
+                            <tr>
+                                <th>Month and Year</th>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Sales</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="loadingIndicator" style="display: none;">
+                    Loading, please wait...
+                </div>
+
+
+
+
             </div>
 
         </div>

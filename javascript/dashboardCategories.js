@@ -245,7 +245,7 @@ function loadDataDashboard(url) {
             series: topHighSaleProductSales,
             labels: topHighSaleProductNames,
             title: {
-                text: 'Top 10 High Sale Products',
+                text: 'Top 5 High Sale Products',
                 align: 'left'
             },
             tooltip: {

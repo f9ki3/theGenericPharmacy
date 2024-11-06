@@ -36,6 +36,15 @@ $(document).ready(function() {
                             window.location.href = 'admin/';
                         }, 3000);
 
+                    }else if (response === "2") {
+                        $("#loader").show();
+                        // Show the login-div
+                        $("#login-div").hide();
+                        // Hide the loader
+                        setTimeout(function() {
+                            window.location.href = 'admin1/';
+                        }, 3000);
+
                     } else {
                         $('.error').show();
                     }

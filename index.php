@@ -38,8 +38,8 @@
                             <img style="width: 50%" src="uploads/LOGOO.png" alt="">
                             <h3 class="fw-bold">READY TO LOGIN</h3>
                             <hr>
-                            <p>Username</p>
-                            <input id="username" type="text" class="form-control form-control-lg rounded-4 rounded " placeholder="Enter your Username">
+                            <p>Email</p>
+                            <input id="username" type="email" class="form-control form-control-lg rounded-4 rounded " placeholder="Enter your Username">
                             <p class="mt-3">Password</p>
                             <input id="password" type="password" class="form-control form-control-lg rounded rounded-4" placeholder="Enter your password">
                             

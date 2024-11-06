@@ -9,7 +9,8 @@
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="index" ><i class="bi me-2 bi-activity"></i> Dashboard</a></li>
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="product" ><i class="bi me-2 bi-ticket-perforated"></i> Sales History</a></li>
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="user_logs" ><i class="bi me-2 bi-bar-chart-steps"></i> System Logs</a></li>
-        <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="accounts" ><i class="bi me-2 bi-people"></i> Accounts</a></li>
+        <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="accounts" ><i class="bi me-2 bi-people"></i> Super Admin</a></li>
+        <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="admin" ><i class="bi me-2 bi-people"></i> Admin</a></li>
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="about" ><i <i class="bi me-2 bi-rocket-takeoff"></i> About</a></li>
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="help" ><i class="bi me-2 bi-file-break"></i> Help</a></li>
         <li style="text-decoration: none; list-style: none; padding-top: 10px"><a class="text-decoration-none text-dark" href="logout" ><i class="bi me-2 bi-power"></i> Logout</a></li>

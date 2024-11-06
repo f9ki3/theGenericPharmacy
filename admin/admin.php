@@ -25,7 +25,7 @@
             <div class="row content-main">
             <div class="rounded rounded-4 border p-4" style="height: auto">
             <div class="d-flex flex-row justify-content-between align-items-center mb-4">
-                <h3 class="fw-bolder mb-3 ">Super Admin List</h3>
+                <h3 class="fw-bolder mb-3 ">Admin List</h3>
                 <button class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Create Account+</button>
             </div>
                     <div class="table-responsive">
@@ -57,7 +57,7 @@
     <div class="modal-dialog">
         <div class="modal-content w-100">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Super Admin Account</h1>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Admin Account</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

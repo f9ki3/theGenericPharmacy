@@ -31,7 +31,7 @@
                     
                     <h3 class="fw-bolder mb-3">About Us</h3>
                     <p>
-                    This website is utilized for simulating dashboards to analyze drug stock behavior and sales revenue. It is specifically designed for use at The Generics Pharmacy, Atlag, Malolos City Branch. The website serves as a requirement for the following subjects: Capstone 1, Web Systems and Technologies 2, and Systems Integration and Architecture.
+                    This website is utilized for simulating dashboards analyzing and forecasting the sales quantities. It is specifically designed for use at The Generics Pharmacy, Atlag, Malolos City Branch. The website serves as a requirement for the following subjects: Capstone 2 and Systems Integration and Architecture 2.
                     </p>
                     </div>
                
@@ -79,6 +79,14 @@
                             
                         </div>
                         
+                        <div class="col-6 col-md-4 ">
+                            <div style=" width: 120px; height: 120px">
+                                <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/John Benedict R. Mopera.jpeg" alt="" >
+                            </div>
+                            <h5 class="mt-3">John Benidict Mopera</h5>
+                            <p>Member</p>
+                            
+                        </div>
                     </div>
                
             </div>

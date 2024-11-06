@@ -28,33 +28,14 @@
                 </div>
             </div> -->
             <div class="col-12 col-md-8" style="padding-top: 150px; padding-left: 70px">
-                <h1 class="fw-bolder" style="font-size: 50px"><b class="text-danger">T</b>G<b class="text-danger">P</b>agpagaling ng Pilipinas!</h1>
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="uploads/SG.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="uploads/tgp3.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="uploads/tgpp1.png" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    </div>
+                <div>
+                    <img style="width: 100%;" src="assets/img/undraw_medicine_b-1-ol.svg" alt="">
+                </div>
             </div>
             <div class="col-12 col-md-4 pt-5 ">
                     <form id="login_form">
-                        <div class="p-5 w-100  mt-5" style="height: 550px">
-                            <p class=" mt-5">We Keep Everything</p>
+                        <div class="p-5 w-100 border mt-5" style="height: auto">
+                            <img style="width: 50%" src="uploads/LOGOO.png" alt="">
                             <h3 class="fw-bold">READY TO LOGIN</h3>
                             <hr>
                             <p>Username</p>
@@ -69,7 +50,7 @@
                             </button>
                             <button type="submit" id="login_btn"  class="btn mt-3 rounded rounded-4 btn-danger btn-lg w-100">Login</button>
                             <div class="alert mt-3 alert-danger text-center error" role="alert" style="display: none">
-                                Please check your login Credentials
+                            "Oops! Something doesn’t match. Check your login information and try again.
                             </div>
                         </div>
                     </form>

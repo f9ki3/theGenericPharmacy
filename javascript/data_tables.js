@@ -1,8 +1,8 @@
 function loadData(tableId, url, categoryTitle) {
-    // Initially hide the specified table and show the loading indicator
-    $('#' + tableId).hide();
-    $('#loadingIndicator').show();
-    
+    // Hide the table wrapper immediately when a new category is selected
+    $('#tableWrapper').hide(); // Force the table wrapper to be hidden
+    $('#loadingIndicator').show(); // Show the loading indicator
+
     // Update the title dynamically
     $('#categoryTitle').text(categoryTitle);
 
@@ -13,12 +13,8 @@ function loadData(tableId, url, categoryTitle) {
         success: function (data) {
             console.log(data);
 
-            // Hide loading indicator and show the specified table
-            $('#loadingIndicator').hide();
-            $('#' + tableId).show();
-
             // Initialize or reload DataTable with the fetched data
-            $('#' + tableId).DataTable({
+            var table = $('#' + tableId).DataTable({
                 data: data,
                 columns: [
                     { data: 'Month and Year' },
@@ -26,7 +22,13 @@ function loadData(tableId, url, categoryTitle) {
                     { data: 'Quantity' },
                     { data: 'Sales' }
                 ],
-                destroy: true // Allow reinitializing DataTable
+                destroy: true, // Allow reinitializing DataTable
+                // Ensure DataTable is shown only after it's ready
+                drawCallback: function() {
+                    // Hide loading indicator and show the table wrapper once the DataTable is drawn
+                    $('#loadingIndicator').hide();
+                    $('#tableWrapper').fadeIn(); // Show the table wrapper with a fade-in effect
+                }
             });
         },
         error: function () {
@@ -45,6 +47,10 @@ $(document).ready(function () {
         
         // Load data for the selected category and update the title
         loadData('SalesProducts', url, category);
+
+        // Force hide the table wrapper before loading new data
+        $('#tableWrapper').hide();
+        $('#loadingIndicator').show();
     });
     
     // Initial load with default selection (first category)

@@ -16,6 +16,7 @@
     <script src="../javascript/get_sales_cost_profit.js"></script>
     <script src="../javascript/get_top_product.js"></script>
     <script src="../javascript/create_account.js"></script>
+    <script src="../javascript/dashboardCategories.js"></script>
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
 

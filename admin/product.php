@@ -33,7 +33,9 @@
                         <option value="Respiratory Medications">Respiratory Medications</option>
                     </select>
                 </div>
-                <div class="table-responsive">
+
+                <!-- Wrapper for the table -->
+                <div id="tableWrapper" class="table-responsive" style="display:none;">
                     <table id="SalesProducts" class="display table-striped">
                         <thead>
                             <tr>
@@ -47,9 +49,8 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="loadingIndicator" style="display: none;">
-                    Loading, please wait...
-                </div>
+
+                <div id="loadingIndicator" style="display: none;">Loading, please wait...</div>
 
 
 

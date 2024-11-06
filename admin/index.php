@@ -57,8 +57,22 @@
 
                 <div class="forcasting-profile col-12 col-md-4">
                     <div class="shadow border rounded rounded-4 p-4 pt-5" style="height: 170px">
-                            <h5>Revenue</h5>
-                            <h2 id="revenue" class="fw-bolder">PHP 0.00 </h2>
+                            <h5>Filter Category</h5>
+                            <select name="" class="form-select form-select-sm w-100" id="categorySelectDashboard">
+                                <option value="Allergy and Inflammation">Allergy and Inflammation</option>
+                                <option value="Antibiotics and Antimicrobials">Antibiotics and Antimicrobials</option>
+                                <option value="CardioVascular">CardioVascular</option>
+                                <option value="Essentials">Essentials</option>
+                                <option value="Gastrointestinal Medication">Gastrointestinal Medication</option>
+                                <option value="Hematologic Medication">Hematologic Medication</option>
+                                <option value="Metabolic Disorders Medications">Metabolic Disorders Medications</option>
+                                <option value="Musculoskeletal">Musculoskeletal</option>
+                                <option value="Necessities">Necessities</option>
+                                <option value="Neurological Medications">Neurological Medications</option>
+                                <option value="Pain Relief Medications">Pain Relief Medications</option>
+                                <option value="Renal & Urinary Medications">Renal & Urinary Medications</option>
+                                <option value="Respiratory Medications">Respiratory Medications</option>
+                            </select>
                     </div>
                 </div>
 
@@ -74,59 +88,98 @@
 
                 <div class="col-12 col-md-8">
                     <div class="shadow border mt-4 rounded rounded-4 p-4 pt-4" style="height: 170px">
-                        <h5 >Summary</h5>
-                        <div class=" d-flex flex-row justify-content-evenly align-items-center">
-                            <div class=" text-center">
-                                <h5 id="salesR" class="summary fw-bolder mt-2">0 </h5>
-                                <h5>Sales</h5>
-                            </div>
-                            <div class=" text-center">
-                                <h5 id="costR" class="summary fw-bolder mt-2">0 </h5>
-                                <h5>Cost</h5>
-                            </div>
-                            <div class=" text-center">
-                                <h5 id="profitR" class="summary fw-bolder mt-2">0 </h5>
-                                <h5>Profit</h5>
-                            </div>
+                    <div class="d-flex flex-row mb-3 justify-content-between align-items-center">
+                        <h5 id="">Summary</h5>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 text-start">
+                            <p id="sale" class="fw-bolder" style="font-size: 40px; margin-top: -20px;">₱0</p>
+                            <p style="margin-top: -20px;">Sales</p>
+                        </div>
+                        <div class="col-md-6 text-start">
+                            <p id="sold" class="fw-bolder" style="font-size: 40px; margin-top: -20px;">0</p>
+                            <p style="margin-top: -20px;">Sold</p>
+                        </div>
+                    </div>
 
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
+                        <div id="loadingIndicator3" style="display: none;">
+                            <div id="loader-3" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                <div class="loading-wave">
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Wrapper -->
+                        <div id="chartWrapper3" style="display: none;">
+                            <div id="top10HighSaleProducts"></div> <!-- This is where the chart will be rendered -->
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
-                        <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
-                            <h5 class="fw-bolder ms-3">Yearly Sales</h5>
-                            <div id="chart">
-
+                    <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
+                        <div id="loadingIndicator4" style="display: none;">
+                            <div id="loader-3" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                <div class="loading-wave">
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Chart Wrapper -->
+                        <div id="chartWrapper4" style="display: none;">
+                            <div id="top10LowSaleProducts"></div> <!-- This is where the chart will be rendered -->
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6">
-                        <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
-                            <h5 class="fw-bolder ms-3">Yearly Profit</h5>
-                            <div id="pie"></div>
-                        </div>
-                    </div>
-               </div>
-               <div class="row">
-                <div class="col-12 col-md-6">
-                        <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
-                            <h5 class="fw-bolder ms-3">Yearly Sales</h5>
-                            <div id="line">
-
+                <div class="col-12 col-md-12">
+                    <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
+                        <div id="loadingIndicator" style="display: none;">
+                            <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                <div class="loading-wave">
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
-                            <h5 class="fw-bolder ms-3">Top Sale Product</h5>
-                            <div id="data-list">
 
-                            </div>
-
+                        <!-- Chart Wrapper -->
+                        <div id="chartWrapper" style="display: none;">
+                            <div id="monthlysales"></div> <!-- This is where the chart will be rendered -->
                         </div>
                     </div>
-               </div>
-               
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
+                        <div id="loadingIndicator2" style="display: none;">
+                            <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                <div class="loading-wave">
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Wrapper -->
+                        <div id="chartWrapper2" style="display: none;">
+                            <div id="yearlysales"></div> <!-- This is where the chart will be rendered -->
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

@@ -382,6 +382,32 @@ function loadDataDashboard(url) {
     
 }
 
+
+
+// Function to animate the sold and sale values randomly
+function animateSoldAndSale() {
+    // Start random number animation instantly for "sold"
+    window.soldInterval = setInterval(function () {
+        let randomSold = Math.floor(Math.random() * 1000); // Random number for "sold"
+        $('#sold').text(randomSold);
+    }, 50); // Update every 50ms (faster updates)
+
+    // Start random number animation instantly for "sale"
+    window.saleInterval = setInterval(function () {
+        let randomSale = Math.floor(Math.random() * 10000); // Random number for "sale"
+        $('#sale').text(new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(randomSale));
+    }, 75); // Update every 75ms (faster updates)
+}
+
+// Function to stop the random number animation once data is loaded
+function stopSoldAndSaleAnimation() {
+    clearInterval(window.soldInterval); // Stop "sold" animation
+    clearInterval(window.saleInterval); // Stop "sale" animation
+}
+
+// Store the chart globally so we can destroy it before re-rendering
+var forecastChart = null;
+
 function loadDataDashboardForecast(url2) {
     // Fetch data using AJAX
     $.ajax({
@@ -398,6 +424,11 @@ function loadDataDashboardForecast(url2) {
             var values = data.map(function (item) {
                 return parseFloat(item.Quantity); // Extracting "Quantity" for the y-axis and converting to float
             });
+
+            // If a chart already exists, destroy it before creating a new one
+            if (forecastChart) {
+                forecastChart.destroy(); // Destroy the existing chart
+            }
 
             // Define the chart options with data labels enabled
             var options = {
@@ -428,9 +459,9 @@ function loadDataDashboardForecast(url2) {
                 }
             };
 
-            // Initialize and render the chart
-            var chart = new ApexCharts(document.querySelector("#forecastQuantity"), options);
-            chart.render();
+            // Initialize and render the new chart
+            forecastChart = new ApexCharts(document.querySelector("#forecastQuantity"), options);
+            forecastChart.render();
 
         },
         error: function () {
@@ -440,39 +471,16 @@ function loadDataDashboardForecast(url2) {
     });
 }
 
-
-
-// Function to animate the sold and sale values randomly
-function animateSoldAndSale() {
-    // Start random number animation instantly for "sold"
-    window.soldInterval = setInterval(function () {
-        let randomSold = Math.floor(Math.random() * 1000); // Random number for "sold"
-        $('#sold').text(randomSold);
-    }, 50); // Update every 50ms (faster updates)
-
-    // Start random number animation instantly for "sale"
-    window.saleInterval = setInterval(function () {
-        let randomSale = Math.floor(Math.random() * 10000); // Random number for "sale"
-        $('#sale').text(new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(randomSale));
-    }, 75); // Update every 75ms (faster updates)
-}
-
-// Function to stop the random number animation once data is loaded
-function stopSoldAndSaleAnimation() {
-    clearInterval(window.soldInterval); // Stop "sold" animation
-    clearInterval(window.saleInterval); // Stop "sale" animation
-}
-
 $(document).ready(function () {
     // Event listener for category selection change
     $('#categorySelectDashboard').on('change', function() {
         var category = $(this).val(); // Get the selected category
         var url = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
-        var url2 = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
+        var url2 = '../server/sales_dashboard_forecast.php?type=' + category; // Build URL for forecast
         
         // Load data for the selected category
         loadDataDashboard(url);
-        loadDataDashboardForecast(url2)
+        loadDataDashboardForecast(url2);
     });
 
     // Initial load with default selection (first category)
@@ -482,5 +490,5 @@ $(document).ready(function () {
 
     // Initial load with default selection (first category)
     var initialUrl2 = '../server/sales_dashboard_forecast.php?type=' + defaultCategory;
-    loadDataDashboardForecast(initialUrl2)
+    loadDataDashboardForecast(initialUrl2);
 });

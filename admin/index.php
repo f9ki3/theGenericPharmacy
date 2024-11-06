@@ -144,6 +144,25 @@
                 </div>
                 <div class="col-12 col-md-12">
                     <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
+                        <div id="loadingIndicator5" style="display: none;">
+                            <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                <div class="loading-wave">
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                    <div class="loading-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart Wrapper -->
+                        <div id="chartWrapper5" style="display: none;">
+                            <div id="forecastQuantity"></div> <!-- This is where the chart will be rendered -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="shadow border mt-4 rounded rounded-4 p-4 pt-5" style="height: 450px">
                         <div id="loadingIndicator" style="display: none;">
                             <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
                                 <div class="loading-wave">

@@ -1,7 +1,7 @@
 function loadDataDashboard(url) {
     // Show loading indicator and hide chart before making the request
-    $('#chartWrapper,#chartWrapper2, #chartWrapper3, #chartWrapper4').hide(); // Hide the chart wrapper initially
-    $('#loadingIndicator, #loadingIndicator2, #loadingIndicator3, #loadingIndicator4').show(); // Show the loading indicator
+    $('#chartWrapper,#chartWrapper2, #chartWrapper3, #chartWrapper4, #chartWrapper5').hide(); // Hide the chart wrapper initially
+    $('#loadingIndicator, #loadingIndicator2, #loadingIndicator3, #loadingIndicator4, #loadingIndicator5').show(); // Show the loading indicator
 
     // Start the random animation instantly when the page reloads or category changes
     animateSoldAndSale();
@@ -96,8 +96,8 @@ function loadDataDashboard(url) {
             });
     
             // Hide loading indicator after processing
-            $('#chartWrapper,#chartWrapper2, #chartWrapper3, #chartWrapper4').show();
-            $('#loadingIndicator, #loadingIndicator2, #loadingIndicator3, #loadingIndicator4').hide();
+            $('#chartWrapper,#chartWrapper2, #chartWrapper3, #chartWrapper4, #chartWrapper5').show();
+            $('#loadingIndicator, #loadingIndicator2, #loadingIndicator3, #loadingIndicator4, #loadingIndicator5').hide();
     
             // Update the total sales and transactions in the respective elements
             $('#sold').fadeOut(300, function() {
@@ -225,123 +225,151 @@ function loadDataDashboard(url) {
     
             // **Top 10 High Sale Products** (already implemented)
             let topHighSaleProducts = Object.keys(productSalesData)
-                .map(function(productName) {
-                    return { name: productName, sales: productSalesData[productName] };
-                })
-                .sort(function(a, b) {
-                    return b.sales - a.sales; // Sort in descending order by sales (high to low)
-                })
-                .slice(0, 10); // Get the top 10 high sale products
-    
+            .map(function(productName) {
+                return { name: productName, sales: productSalesData[productName] };
+            })
+            .sort(function(a, b) {
+                return b.sales - a.sales; // Sort in descending order by sales (high to low)
+            })
+            .slice(0, 5); // Get the top 10 high sale products
+
             let topHighSaleProductNames = topHighSaleProducts.map(function(product) { return product.name; });
             let topHighSaleProductSales = topHighSaleProducts.map(function(product) { return product.sales; });
-    
+
             // Create the ApexCharts options for the Top 10 High Sale Products Donut Chart
             var highSaleProductsOptions = {
-                chart: {
-                    type: 'donut', // Donut chart type
-                    height: 350
-                },
-                series: topHighSaleProductSales, // Sales data for the top 10 high sale products
-                labels: topHighSaleProductNames, // Product names as labels
-                title: {
-                    text: 'Top 10 High Sale Products',
-                    align: 'left'
-                },
-                tooltip: {
-                    y: {
-                        formatter: function(value) {
-                            return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Show sales in currency format
-                        }
-                    }
-                },
-                dataLabels: {
-                    enabled: false, // Disable labels inside the donut chart
-                },
-                legend: {
-                    position: 'bottom', // Position the labels (product names) at the bottom
-                    floating: false, // Keep the legend in a normal flow
-                    fontSize: '8px',
-                    labels: {
-                        useSeriesColors: true // Use the series colors for the labels
-                    },
-                    itemMargin: {
-                        horizontal: 0, // Add some horizontal spacing between legend items
-                        vertical: 0 // Add vertical spacing between legend items
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        donut: {
-                            size: '60%' // Adjust donut size
-                        }
+            chart: {
+                type: 'donut',
+                height: 350
+            },
+            series: topHighSaleProductSales,
+            labels: topHighSaleProductNames,
+            title: {
+                text: 'Top 10 High Sale Products',
+                align: 'left'
+            },
+            tooltip: {
+                y: {
+                    formatter: function(value) {
+                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
                     }
                 }
+            },
+            dataLabels: {
+                enabled: true, // Enable labels around the donut chart
+                style: {
+                    fontSize: '10px',
+                    fontWeight: 'bold',
+                    colors: ['#fff'] // Customize label color if needed
+                },
+                dropShadow: {
+                    enabled: true,
+                    top: 1,
+                    left: 1,
+                    blur: 1,
+                    opacity: 0.6
+                },
+                position: 'outside' // Position labels outside the donut chart
+            },
+            legend: {
+                position: 'bottom',
+                floating: false,
+                fontSize: '8px',
+                labels: {
+                    useSeriesColors: true
+                },
+                itemMargin: {
+                    horizontal: 5,
+                    vertical: 2
+                }
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '60%'
+                    }
+                }
+            }
             };
-    
-            // Initialize ApexCharts with the options for the Top 10 High Sale Products Donut Chart
+
+            // Initialize ApexCharts for Top 10 High Sale Products Donut Chart
             var highSaleProductsChart = new ApexCharts(document.querySelector("#top10HighSaleProducts"), highSaleProductsOptions);
             highSaleProductsChart.render();
-    
-            // **Top 10 Low Sale Products**
+
+            // **Top 5 Low Sale Products**
             let topLowSaleProducts = Object.keys(productSalesData)
-                .map(function(productName) {
-                    return { name: productName, sales: productSalesData[productName] };
-                })
-                .sort(function(a, b) {
-                    return a.sales - b.sales; // Sort in ascending order by sales (low to high)
-                })
-                .slice(0, 10); // Get the top 10 low sale products
-    
+            .map(function(productName) {
+                return { name: productName, sales: productSalesData[productName] };
+            })
+            .sort(function(a, b) {
+                return a.sales - b.sales; // Sort in ascending order by sales (low to high)
+            })
+            .slice(0, 5); // Get the top 5 low sale products
+
             let topLowSaleProductNames = topLowSaleProducts.map(function(product) { return product.name; });
             let topLowSaleProductSales = topLowSaleProducts.map(function(product) { return product.sales; });
-    
-            // Create the ApexCharts options for the Top 10 Low Sale Products Donut Chart
+
+            // Create the ApexCharts options for the Top 5 Low Sale Products Donut Chart
             var lowSaleProductsOptions = {
-                chart: {
-                    type: 'donut', // Donut chart type
-                    height: 350
-                },
-                series: topLowSaleProductSales, // Sales data for the top 10 low sale products
-                labels: topLowSaleProductNames, // Product names as labels
-                title: {
-                    text: 'Top 10 Low Sale Products',
-                    align: 'left'
-                },
-                tooltip: {
-                    y: {
-                        formatter: function(value) {
-                            return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Show sales in currency format
-                        }
-                    }
-                },
-                dataLabels: {
-                    enabled: false, // Disable labels inside the donut chart
-                },
-                legend: {
-                    position: 'bottom', // Position the labels (product names) at the bottom
-                    floating: false, // Keep the legend in a normal flow
-                    fontSize: '8px',
-                    labels: {
-                        useSeriesColors: true // Use the series colors for the labels
-                    },
-                    itemMargin: {
-                        horizontal: 0, // Add some horizontal spacing between legend items
-                        vertical: 0// Add vertical spacing between legend items
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        donut: {
-                            size: '60%' // Adjust donut size
-                        }
+            chart: {
+                type: 'donut',
+                height: 350
+            },
+            series: topLowSaleProductSales,
+            labels: topLowSaleProductNames,
+            title: {
+                text: 'Top 5 Low Sale Products',
+                align: 'left'
+            },
+            tooltip: {
+                y: {
+                    formatter: function(value) {
+                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
                     }
                 }
+            },
+            dataLabels: {
+                enabled: true,
+                style: {
+                    fontSize: '10px',
+                    fontWeight: 'bold',
+                    colors: ['#fff']
+                },
+                dropShadow: {
+                    enabled: true,
+                    top: 1,
+                    left: 1,
+                    blur: 1,
+                    opacity: 0.6
+                },
+                position: 'outside'
+            },
+            legend: {
+                position: 'bottom',
+                floating: false,
+                fontSize: '8px',
+                labels: {
+                    useSeriesColors: true
+                },
+                itemMargin: {
+                    horizontal: 5,
+                    vertical: 2
+                }
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '60%'
+                    }
+                }
+            }
             };
-    
-            // Initialize ApexCharts with the options for the Top 10 Low Sale Products Donut Chart
+
+            // Initialize ApexCharts for Top 5 Low Sale Products Donut Chart
             var lowSaleProductsChart = new ApexCharts(document.querySelector("#top10LowSaleProducts"), lowSaleProductsOptions);
             lowSaleProductsChart.render();
+
+
         },
         error: function () {
             $('#loadingIndicator').hide();
@@ -353,6 +381,66 @@ function loadDataDashboard(url) {
     
     
 }
+
+function loadDataDashboardForecast(url2) {
+    // Fetch data using AJAX
+    $.ajax({
+        url: url2,
+        dataType: 'json', // Expecting a JSON response
+        success: function (data) {
+            console.log("Data fetched successfully:", data); // Log the full response for debugging
+
+            // Extract labels and values from the response data
+            var labels = data.map(function (item) {
+                return item.Date; // Extracting "Date" for the x-axis
+            });
+
+            var values = data.map(function (item) {
+                return parseFloat(item.Quantity); // Extracting "Quantity" for the y-axis and converting to float
+            });
+
+            // Define the chart options with data labels enabled
+            var options = {
+                chart: {
+                    type: 'line',
+                    height: 350
+                },
+                series: [{
+                    name: 'Forecast Quantity',
+                    data: values // Use the fetched data for the line series
+                }],
+                xaxis: {
+                    categories: labels // Use the labels for the x-axis
+                },
+                title: {
+                    text: 'Forecasted Sales Quantity',
+                    align: 'left'
+                },
+                dataLabels: {
+                    enabled: true, // Enable data labels
+                    style: {
+                        colors: ['#000'], // Optional: set the color of the data labels
+                        fontSize: '12px', // Optional: adjust the font size of the data labels
+                    },
+                    formatter: function (val) {
+                        return val.toFixed(2); // Optional: format the data labels to 2 decimal places
+                    }
+                }
+            };
+
+            // Initialize and render the chart
+            var chart = new ApexCharts(document.querySelector("#forecastQuantity"), options);
+            chart.render();
+
+        },
+        error: function () {
+            $('#loadingIndicator5').hide();
+            console.error('Failed to fetch data. Please try again.');
+        }
+    });
+}
+
+
 
 // Function to animate the sold and sale values randomly
 function animateSoldAndSale() {
@@ -380,13 +468,19 @@ $(document).ready(function () {
     $('#categorySelectDashboard').on('change', function() {
         var category = $(this).val(); // Get the selected category
         var url = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
+        var url2 = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
         
         // Load data for the selected category
         loadDataDashboard(url);
+        loadDataDashboardForecast(url2)
     });
 
     // Initial load with default selection (first category)
     var defaultCategory = $('#categorySelectDashboard').val();
     var initialUrl = '../server/sales_dashboard_categories.php?type=' + defaultCategory;
     loadDataDashboard(initialUrl);
+
+    // Initial load with default selection (first category)
+    var initialUrl2 = '../server/sales_dashboard_forecast.php?type=' + defaultCategory;
+    loadDataDashboardForecast(initialUrl2)
 });

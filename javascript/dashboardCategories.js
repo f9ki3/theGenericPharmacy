@@ -161,33 +161,59 @@ function loadDataDashboard(url) {
             // Create the ApexCharts options for the yearly sales donut chart
             var yearlyOptions = {
                 chart: {
-                    type: 'donut', // Donut chart type
+                    type: 'bar', // Change the chart type to 'bar' for a bar chart
                     height: 350
                 },
-                series: yearlySales, // Sales data for each year
-                labels: yearlyCategories, // Categories (Years)
+                series: [{
+                    name: 'Yearly Sales',
+                    data: yearlySales // Yearly sales data for each year
+                }],
+                xaxis: {
+                    categories: yearlyCategories, // Categories (Years)
+                    title: {
+                        text: 'Year' // Title for the x-axis
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Sales ($)' // Title for the y-axis
+                    },
+                    labels: {
+                        formatter: function(value) {
+                            return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Format the y-axis as currency
+                        }
+                    }
+                },
                 title: {
-                    text: 'Yearly Sales',
+                    text: 'Yearly Sales', // Title for the chart
                     align: 'left'
                 },
                 tooltip: {
+                    x: {
+                        formatter: function(value) {
+                            return value; // Display the year on the tooltip
+                        }
+                    },
                     y: {
                         formatter: function(value) {
-                            return Math.round(value); // Round the tooltip values to whole numbers
+                            return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Format the tooltip as currency
                         }
                     }
                 },
                 dataLabels: {
-                    enabled: false, // Disable labels inside the donut chart
+                    enabled: true, // Enable data labels on the bars
+                    formatter: function(value) {
+                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Format the data labels as currency
+                    }
                 },
                 plotOptions: {
-                    pie: {
-                        donut: {
-                            size: '60%' // Adjust donut size
-                        }
+                    bar: {
+                        horizontal: false, // Set bars to be vertical
+                        columnWidth: '60%' // Adjust the width of the bars
                     }
                 }
             };
+            
     
             // Initialize ApexCharts with the provided options for monthly sales bar chart
             var monthlySales = new ApexCharts(document.querySelector("#monthlysales"), monthlyOptions);

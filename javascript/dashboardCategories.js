@@ -111,7 +111,7 @@ function loadDataDashboard(url) {
             var monthlyOptions = {
                 chart: {
                     type: 'area', // You can change to 'bar' if you prefer a bar chart
-                    height: 350
+                    height: 250
                 },
                 series: [{
                     name: 'Sales',
@@ -119,14 +119,8 @@ function loadDataDashboard(url) {
                 }],
                 xaxis: {
                     categories: categories, // Set the months as categories
-                    title: {
-                        text: 'Month and Year'
-                    }
                 },
                 yaxis: {
-                    title: {
-                        text: 'Sales ($)'
-                    },
                     labels: {
                         formatter: function(value) {
                             return Math.round(value); // Ensure that the y-axis values are whole numbers
@@ -162,7 +156,7 @@ function loadDataDashboard(url) {
             var yearlyOptions = {
                 chart: {
                     type: 'bar', // Change the chart type to 'bar' for a bar chart
-                    height: 350
+                    height: 250
                 },
                 series: [{
                     name: 'Yearly Sales',
@@ -175,9 +169,6 @@ function loadDataDashboard(url) {
                     }
                 },
                 yaxis: {
-                    title: {
-                        text: 'Sales ($)' // Title for the y-axis
-                    },
                     labels: {
                         formatter: function(value) {
                             return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Format the y-axis as currency
@@ -240,7 +231,7 @@ function loadDataDashboard(url) {
             var highSaleProductsOptions = {
             chart: {
                 type: 'donut',
-                height: 350
+                height: 250
             },
             series: topHighSaleProductSales,
             labels: topHighSaleProductNames,
@@ -313,7 +304,7 @@ function loadDataDashboard(url) {
             var lowSaleProductsOptions = {
             chart: {
                 type: 'donut',
-                height: 350
+                height: 250
             },
             series: topLowSaleProductSales,
             labels: topLowSaleProductNames,
@@ -434,7 +425,7 @@ function loadDataDashboardForecast(url2) {
             var options = {
                 chart: {
                     type: 'line',
-                    height: 350
+                    height: 250
                 },
                 series: [{
                     name: 'Forecast Quantity',
@@ -444,7 +435,7 @@ function loadDataDashboardForecast(url2) {
                     categories: labels // Use the labels for the x-axis
                 },
                 title: {
-                    text: 'Forecasted Sales Quantity',
+                    text: 'Forecasted Sales',
                     align: 'left'
                 },
                 dataLabels: {

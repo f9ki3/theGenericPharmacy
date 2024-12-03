@@ -121,7 +121,7 @@
                                 </div>
 
                                 <!-- Wrapper for the table -->
-                                <div id="tableWrapper" class="table-responsive" style="display:none; width: 100%; height: 400px; overflow: auto;">
+                                <div id="tableWrapper" class="table-responsive" style="display:none; width: 100%; height: 380px; overflow: auto;">
                                     <table id="SalesProducts" class="display table-striped" style="width: 100%; table-layout: fixed;">
                                         <thead>
                                             <tr>

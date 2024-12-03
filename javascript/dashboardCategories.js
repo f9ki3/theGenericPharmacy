@@ -67,38 +67,38 @@ function loadDataDashboard(url) {
     
             // Prepare monthly sales data for the chart
             let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    
+
             // Create an array of months for each year
             for (let year in monthlyAggregatedData) {
                 months.forEach(function(month, idx) {
                     let monthYear = month + " " + year;
-    
+
                     // Add the month-year combination to categories
                     if (!categories.includes(monthYear)) {
                         categories.push(monthYear);
                     }
-    
+
                     // Add sales for that month (default to 0 if no sales data for the month)
                     let sales = monthlyAggregatedData[year][idx] || 0;
                     salesData.push(sales);
                 });
             }
-    
+
             // Sort the categories (Month and Year) in descending order
             categories.sort(function(a, b) {
                 return new Date(b) - new Date(a);
             });
-    
+
             // Sort the sales data to match the sorted categories
             salesData = categories.map(function(monthYear) {
                 let [month, year] = monthYear.split(" ");
                 return monthlyAggregatedData[year][months.indexOf(month)] || 0;
             });
-    
+
             // Hide loading indicator after processing
             $('#chartWrapper,#chartWrapper2, #chartWrapper3, #chartWrapper4, #chartWrapper5').show();
             $('#loadingIndicator, #loadingIndicator2, #loadingIndicator3, #loadingIndicator4, #loadingIndicator5').hide();
-    
+
             // Update the total sales and transactions in the respective elements
             $('#sold').fadeOut(300, function() {
                 $(this).text(totalTransactions).fadeIn(300);
@@ -106,11 +106,11 @@ function loadDataDashboard(url) {
             $('#sale').fadeOut(300, function() {
                 $(this).text(new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(totalSales)).fadeIn(300);
             });
-    
-            // Create the ApexCharts options for the monthly sales bar chart
+
+            // Create the ApexCharts options for the monthly sales area chart with data labels
             var monthlyOptions = {
                 chart: {
-                    type: 'area', // You can change to 'bar' if you prefer a bar chart
+                    type: 'area', // Set chart type to 'area' for area chart
                     height: 250
                 },
                 series: [{
@@ -119,6 +119,9 @@ function loadDataDashboard(url) {
                 }],
                 xaxis: {
                     categories: categories, // Set the months as categories
+                    labels: {
+                        show: false // Hide the labels on the x-axis
+                    }
                 },
                 yaxis: {
                     labels: {
@@ -142,16 +145,47 @@ function loadDataDashboard(url) {
                     }
                 },
                 dataLabels: {
-                    enabled: false // Disable labels inside the bars
+                    enabled: true, // Enable data labels on the area chart
+                    style: {
+                        fontSize: '12px',
+                        fontWeight: 'bold',
+                        colors: ['#000'] // Color of the labels
+                    },
+                    formatter: function(value) {
+                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value); // Format labels as currency
+                    },
+                    dropShadow: {
+                        enabled: true,
+                        top: 2,
+                        left: 2,
+                        blur: 3,
+                        opacity: 0.6
+                    }
+                },
+                fill: {
+                    opacity: 0.3, // Set fill opacity to make the area chart more visible
+                    colors: ['#1E90FF'] // Blue color for the area fill (light blue)
+                },
+                stroke: {
+                    curve: 'smooth', // Smooth line
+                    width: 3, // Increase the line width for visibility
+                    colors: ['#1E90FF'] // Blue color for the line (dark blue)
+                },
+                markers: {
+                    size: 0, // Remove the dots (markers)
                 }
             };
-    
+
+            // Initialize ApexCharts with the provided options for monthly sales area chart
+            var monthlySales = new ApexCharts(document.querySelector("#monthlysales"), monthlyOptions);
+            monthlySales.render();
+
             // Prepare data for the yearly sales donut chart
             let yearlyCategories = Object.keys(yearlySalesData);
             let yearlySales = yearlyCategories.map(function(year) {
                 return Math.round(yearlySalesData[year]);
             });
-    
+
             // Create the ApexCharts options for the yearly sales donut chart
             var yearlyOptions = {
                 chart: {
@@ -204,15 +238,11 @@ function loadDataDashboard(url) {
                     }
                 }
             };
-            
-    
-            // Initialize ApexCharts with the provided options for monthly sales bar chart
-            var monthlySales = new ApexCharts(document.querySelector("#monthlysales"), monthlyOptions);
-            monthlySales.render();
-    
+
             // Initialize ApexCharts with the provided options for yearly sales donut chart
             var yearlySalesChart = new ApexCharts(document.querySelector("#yearlysales"), yearlyOptions);
             yearlySalesChart.render();
+
     
             // **Top 10 High Sale Products** (updated to vertical bar chart)
             let topHighSaleProducts = Object.keys(productSalesData)
@@ -481,7 +511,7 @@ function loadDataDashboardForecast(url2) {
 
 $(document).ready(function () {
     // Event listener for category selection change
-    $('#categorySelect').on('change', function() {
+    $('#categorySelectDashboard').on('change', function() {
         var category = $(this).val(); // Get the selected category
         var url = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
         var url2 = '../server/sales_dashboard_forecast.php?type=' + category; // Build URL for forecast

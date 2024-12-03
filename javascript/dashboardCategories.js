@@ -214,151 +214,168 @@ function loadDataDashboard(url) {
             var yearlySalesChart = new ApexCharts(document.querySelector("#yearlysales"), yearlyOptions);
             yearlySalesChart.render();
     
-            // **Top 10 High Sale Products** (already implemented)
+            // **Top 10 High Sale Products** (updated to vertical bar chart)
             let topHighSaleProducts = Object.keys(productSalesData)
             .map(function(productName) {
-                return { name: productName, sales: productSalesData[productName] };
+            return { name: productName, sales: productSalesData[productName] };
             })
             .sort(function(a, b) {
-                return b.sales - a.sales; // Sort in descending order by sales (high to low)
+            return b.sales - a.sales; // Sort in descending order by sales (high to low)
             })
-            .slice(0, 5); // Get the top 10 high sale products
+            .slice(0, 5); // Get the top 5 high sale products
 
             let topHighSaleProductNames = topHighSaleProducts.map(function(product) { return product.name; });
             let topHighSaleProductSales = topHighSaleProducts.map(function(product) { return product.sales; });
 
-            // Create the ApexCharts options for the Top 10 High Sale Products Donut Chart
+            // Create the ApexCharts options for the Top 5 High Sale Products Vertical Bar Chart
             var highSaleProductsOptions = {
             chart: {
-                type: 'donut',
-                height: 250
+            type: 'bar', // Change to bar for vertical bar chart
+            height: 250
             },
-            series: topHighSaleProductSales,
-            labels: topHighSaleProductNames,
+            series: [{
+            name: 'Sales',
+            data: topHighSaleProductSales
+            }],
+            xaxis: {
+            categories: topHighSaleProductNames, // Set categories as product names
+            labels: {
+                show: false // Hide x-axis labels
+            }
+            },
+            yaxis: {
             title: {
-                text: 'Top 5 High Sale Products',
-                align: 'left'
+                text: 'Sales (PHP)'
+            },
+            labels: {
+                show: false // Hide y-axis labels
+            }
+            },
+            title: {
+            text: 'Top 5 High Sale Products',
+            align: 'left'
             },
             tooltip: {
-                y: {
-                    formatter: function(value) {
-                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
-                    }
+            y: {
+                formatter: function(value) {
+                return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
                 }
+            }
             },
             dataLabels: {
-                enabled: true, // Enable labels around the donut chart
-                style: {
-                    fontSize: '10px',
-                    fontWeight: 'bold',
-                    colors: ['#fff'] // Customize label color if needed
-                },
-                dropShadow: {
-                    enabled: true,
-                    top: 1,
-                    left: 1,
-                    blur: 1,
-                    opacity: 0.6
-                },
-                position: 'outside' // Position labels outside the donut chart
+            enabled: true, // Enable data labels on bars
+            style: {
+                fontSize: '12px',
+                fontWeight: 'bold',
+                colors: ['#fff']
+            },
+            dropShadow: {
+                enabled: true,
+                top: 1,
+                left: 1,
+                blur: 1,
+                opacity: 0.6
+            }
             },
             legend: {
-                position: 'bottom',
-                floating: false,
-                fontSize: '8px',
-                labels: {
-                    useSeriesColors: true
-                },
-                itemMargin: {
-                    horizontal: 5,
-                    vertical: 2
-                }
+            position: 'bottom',
+            floating: false,
+            fontSize: '8px',
+            labels: {
+                useSeriesColors: true
             },
-            plotOptions: {
-                pie: {
-                    donut: {
-                        size: '60%'
-                    }
-                }
+            itemMargin: {
+                horizontal: 5,
+                vertical: 2
+            }
             }
             };
 
-            // Initialize ApexCharts for Top 10 High Sale Products Donut Chart
+            // Initialize ApexCharts for Top 5 High Sale Products Vertical Bar Chart
             var highSaleProductsChart = new ApexCharts(document.querySelector("#top10HighSaleProducts"), highSaleProductsOptions);
             highSaleProductsChart.render();
 
-            // **Top 5 Low Sale Products**
+            // **Top 5 Low Sale Products** (updated to vertical bar chart)
             let topLowSaleProducts = Object.keys(productSalesData)
             .map(function(productName) {
-                return { name: productName, sales: productSalesData[productName] };
+            return { name: productName, sales: productSalesData[productName] };
             })
             .sort(function(a, b) {
-                return a.sales - b.sales; // Sort in ascending order by sales (low to high)
+            return a.sales - b.sales; // Sort in ascending order by sales (low to high)
             })
             .slice(0, 5); // Get the top 5 low sale products
 
             let topLowSaleProductNames = topLowSaleProducts.map(function(product) { return product.name; });
             let topLowSaleProductSales = topLowSaleProducts.map(function(product) { return product.sales; });
 
-            // Create the ApexCharts options for the Top 5 Low Sale Products Donut Chart
+            // Create the ApexCharts options for the Top 5 Low Sale Products Vertical Bar Chart
             var lowSaleProductsOptions = {
             chart: {
-                type: 'donut',
-                height: 250
+            type: 'bar', // Change to bar for vertical bar chart
+            height: 250
             },
-            series: topLowSaleProductSales,
-            labels: topLowSaleProductNames,
+            series: [{
+            name: 'Sales',
+            data: topLowSaleProductSales
+            }],
+            xaxis: {
+            categories: topLowSaleProductNames, // Set categories as product names
+            labels: {
+                show: false // Hide x-axis labels
+            }
+            },
+            yaxis: {
             title: {
-                text: 'Top 5 Low Sale Products',
-                align: 'left'
+                text: 'Sales (PHP)'
+            },
+            labels: {
+                show: false // Hide y-axis labels
+            }
+            },
+            title: {
+            text: 'Top 5 Low Sale Products',
+            align: 'left'
             },
             tooltip: {
-                y: {
-                    formatter: function(value) {
-                        return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
-                    }
+            y: {
+                formatter: function(value) {
+                return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(value);
                 }
+            }
             },
             dataLabels: {
+            enabled: true, // Enable data labels on bars
+            style: {
+                fontSize: '12px',
+                fontWeight: 'bold',
+                colors: ['#fff']
+            },
+            dropShadow: {
                 enabled: true,
-                style: {
-                    fontSize: '10px',
-                    fontWeight: 'bold',
-                    colors: ['#fff']
-                },
-                dropShadow: {
-                    enabled: true,
-                    top: 1,
-                    left: 1,
-                    blur: 1,
-                    opacity: 0.6
-                },
-                position: 'outside'
+                top: 1,
+                left: 1,
+                blur: 1,
+                opacity: 0.6
+            }
             },
             legend: {
-                position: 'bottom',
-                floating: false,
-                fontSize: '8px',
-                labels: {
-                    useSeriesColors: true
-                },
-                itemMargin: {
-                    horizontal: 5,
-                    vertical: 2
-                }
+            position: 'bottom',
+            floating: false,
+            fontSize: '8px',
+            labels: {
+                useSeriesColors: true
             },
-            plotOptions: {
-                pie: {
-                    donut: {
-                        size: '60%'
-                    }
-                }
+            itemMargin: {
+                horizontal: 5,
+                vertical: 2
+            }
             }
             };
 
-            // Initialize ApexCharts for Top 5 Low Sale Products Donut Chart
+            // Initialize ApexCharts for Top 5 Low Sale Products Vertical Bar Chart
             var lowSaleProductsChart = new ApexCharts(document.querySelector("#top10LowSaleProducts"), lowSaleProductsOptions);
             lowSaleProductsChart.render();
+
 
 
         },
@@ -464,7 +481,7 @@ function loadDataDashboardForecast(url2) {
 
 $(document).ready(function () {
     // Event listener for category selection change
-    $('#categorySelectDashboard').on('change', function() {
+    $('#categorySelect').on('change', function() {
         var category = $(this).val(); // Get the selected category
         var url = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
         var url2 = '../server/sales_dashboard_forecast.php?type=' + category; // Build URL for forecast

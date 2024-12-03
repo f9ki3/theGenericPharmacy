@@ -6,7 +6,7 @@
     <?php include 'session.php'?>
     <?php include 'header_links.php'?>
 </head>
-<body>
+<body style="overflow: hidden">
     <div class="p-3">
         <div class="row">
             <div class="col-12 col-md-2 shadow" style="height: 100vh;">
@@ -37,28 +37,36 @@
                     </div>
 
                     <div class="col-12 col-md-12">
-                        <div class="mt-4 p-4 pt-0 pt-4" style="height: auto">
+                        <div class=" p-4 border rounded-3" style="height: auto; background-color: white">
                         <div class="d-flex flex-row">
                             <div style="width: 40%">
-                                <p id="time" class="fw-bolder" style="font-size: 25px; margin-top: -20px;"></p>
+                                <p id="time" class="fw-bolder" style="font-size: 25px;"></p>
                                 <p id="date" style="margin-top: -20px"></p> 
                             </div>
-                            <div style="width: 40%">
-                                <p id="sale" class="fw-bolder" style="font-size: 25px; margin-top: -20px;">₱0</p>
-                                <p style="margin-top: -20px;">Sales</p>
+                            <div style="width: 40%" class="d-flex flex-row align-items-center">
+                                <div>
+                                    <i style="font-size: 40px;" class="bi me-3 bi-soundwave text-muted"></i>
+                                </div>
+                                <div>
+                                    <p id="sale" class="fw-bolder" style="font-size: 25px;">₱0</p>
+                                    <p style="margin-top: -20px;">Sales</p>
+                                </div>
                             </div>
-                            <div style="width: 20%">
-                                <p id="sold" class="fw-bolder" style="font-size: 25px; margin-top: -20px;">0</p>
-                                <p style="margin-top: -20px;">Sold</p>
+                            <div style="width: 20%" class="d-flex flex-row align-items-center">
+                                <div>
+                                    <i style="font-size: 40px;" class="bi me-3 bi-speedometer2 text-muted"></i>
+                                </div>
+                                <div> 
+                                    <p id="sold" class="fw-bolder" style="font-size: 25px;">0</p>
+                                    <p style="margin-top: -20px;">Sold</p>
+                                </div>
                             </div>
                         </div>
 
                         </div>
                     </div>
-                    
-                </div>
-                <div class="col-12 col-md-6">
-                <div class="col-12 col-md-12">
+
+                    <div class="col-12 col-md-12">
                         <div class="p-4 pb-0 border rounded-3 mt-3" style="height: 280px; background-color: white">
                             <div id="loadingIndicator5" style="display: none;">
                                 <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
@@ -74,6 +82,104 @@
                             <!-- Chart Wrapper -->
                             <div id="chartWrapper5" style="display: none;">
                                 <div id="forecastQuantity"></div> <!-- This is where the chart will be rendered -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-12">
+                        <div class="p-4 pb-0 border rounded-3 mt-3" style="height: 480px; background-color: white">
+                            <div id="loadingIndicator5" style="display: none;">
+                                <div id="loader-2" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                    <div class="loading-wave">
+                                        <div class="loading-bar"></div>
+                                        <div class="loading-bar"></div>
+                                        <div class="loading-bar"></div>
+                                        <div class="loading-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chart Wrapper -->
+                            <div id="chartWrapper5" style="display: none;">
+                                <div class="d-flex flex-row mb-3 justify-content-between align-items-center">
+                                    <h5 class="fw-bolder" id="categoryTitle">Allergy and Inflammation</h5>
+                                    <select name="" class="form-control w-25" id="categorySelect">
+                                        <option value="Allergy and Inflammation">Allergy and Inflammation</option>
+                                        <option value="Antibiotics and Antimicrobials">Antibiotics and Antimicrobials</option>
+                                        <option value="CardioVascular">CardioVascular</option>
+                                        <option value="Essentials">Essentials</option>
+                                        <option value="Gastrointestinal Medication">Gastrointestinal Medication</option>
+                                        <option value="Hematologic Medication">Hematologic Medication</option>
+                                        <option value="Metabolic Disorders Medications">Metabolic Disorders Medications</option>
+                                        <option value="Musculoskeletal">Musculoskeletal</option>
+                                        <option value="Necessities">Necessities</option>
+                                        <option value="Neurological Medications">Neurological Medications</option>
+                                        <option value="Pain Relief Medications">Pain Relief Medications</option>
+                                        <option value="Renal & Urinary Medications">Renal & Urinary Medications</option>
+                                        <option value="Respiratory Medications">Respiratory Medications</option>
+                                    </select>
+                                </div>
+
+                                <!-- Wrapper for the table -->
+                                <div id="tableWrapper" class="table-responsive" style="display:none; width: 100%; height: 400px; overflow: auto;">
+                                    <table id="SalesProducts" class="display table-striped" style="width: 100%; table-layout: fixed;">
+                                        <thead>
+                                            <tr>
+                                                <th>Month and Year</th>
+                                                <th>Product Name</th>
+                                                <th>Quantity</th>
+                                                <th>Sales</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <div id="loadingIndicator" style="display: none;">Loading, please wait...</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="row g-3 col-12 col-md-12">
+                    <div class="col-12 col-md-6">
+                            <div class="border rounded-3 p-4" style="height: 280px; background-color: white">
+                                <div id="loadingIndicator3" style="display: none;">
+                                    <div id="loader-3" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                        <div class="loading-wave">
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Chart Wrapper -->
+                                <div id="chartWrapper3" style="display: none;">
+                                    <div id="top10HighSaleProducts"></div> <!-- This is where the chart will be rendered -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="border  rounded-3 p-4" style="height: 280px; background-color: white">
+                                <div id="loadingIndicator4" style="display: none;">
+                                    <div id="loader-3" style="height: 100%; width: 100%; display: flex" class="justify-content-center align-items-center">
+                                        <div class="loading-wave">
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                            <div class="loading-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="chartWrapper4" style="display: none;">
+                                    <div id="top10LowSaleProducts"></div> <!-- This is where the chart will be rendered -->
+                                </div>
                             </div>
                         </div>
                     </div>

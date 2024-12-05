@@ -1,4 +1,4 @@
-<div class=" navbar_allysa">
+<div class="navbar_allysa sticky-top">
     <!-- <div>
         <img src="../uploads/LOGOO.png" alt="" style="width: 120px">
     </div> -->

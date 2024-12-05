@@ -21,7 +21,7 @@
             </div>
                     <div class="table-responsive">
 
-                         <table id="accounts" class="display table-striped" style="font-size: 12px">
+                         <table id="accounts_admin" class="display table-striped" style="font-size: 12px">
                             <thead>
                                 <tr>
                                     <th>Username</th>
@@ -95,7 +95,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
-            <button id="create" type="button" class="btn btn-danger">Create</button>
+            <button id="create_admin" type="button" class="btn btn-danger">Create</button>
         </div>
         </div>
     </div>

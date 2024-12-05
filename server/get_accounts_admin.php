@@ -3,7 +3,7 @@
 include '../config/config.php';
 
 // Fetch data from database
-$sql = "SELECT * FROM `users` WHERE type = 0;";
+$sql = "SELECT * FROM `users` WHERE type = 1;";
 $result = $conn->query($sql);
 
 $data = array();

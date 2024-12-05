@@ -48,4 +48,6 @@
     <script src="../javascript/delete_account.js"></script>
     <script src="../javascript/get_the_account_update.js"></script>
     <script src="../javascript/change_password.js"></script>
+    <script src="../javascript/accounts_list_admin.js"></script>
+    <script src="../javascript/create_account_admin.js"></script>
     

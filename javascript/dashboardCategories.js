@@ -511,7 +511,7 @@ function loadDataDashboardForecast(url2) {
 
 $(document).ready(function () {
     // Event listener for category selection change
-    $('#categorySelectDashboard').on('change', function() {
+    $('#categorySelect').on('change', function() {
         var category = $(this).val(); // Get the selected category
         var url = '../server/sales_dashboard_categories.php?type=' + category; // Build URL based on selection
         var url2 = '../server/sales_dashboard_forecast.php?type=' + category; // Build URL for forecast

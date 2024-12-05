@@ -23,6 +23,6 @@ session_unset();
 session_destroy();
 
 // Redirect to the login page
-header("Location: ../admin/logout_message");
+header("Location: ../");
 exit;
 ?>

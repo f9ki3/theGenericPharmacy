@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="w-75 text-end">
                                         <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#edit">Edit</button>
-                                        <button class="btn btn-sm border-danger text-danger" data-bs-toggle="modal" data-bs-target="#change_pass">Cange Password</button>
+                                        <button class="btn btn-sm border-danger text-danger" data-bs-toggle="modal" data-bs-target="#change_pass">Change Password</button>
                                     </div>
                                 </div>
                             <hr>
@@ -126,7 +126,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
-                <button id="change_password" type="button" class="btn btn-danger">Chage Password</button>
+                <button id="change_password" type="button" class="btn btn-danger">Change Password</button>
             </div>
             </div>
         </div>

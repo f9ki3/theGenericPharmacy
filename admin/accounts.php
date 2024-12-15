@@ -185,7 +185,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn text-danger border-danger" data-bs-dismiss="modal">Close</button>
-            <button id="change_password" type="button" class="btn btn-danger">Chage Password</button>
+            <button id="change_password" type="button" class="btn btn-danger">Change Password</button>
         </div>
         </div>
     </div>

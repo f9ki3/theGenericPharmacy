@@ -84,10 +84,11 @@ function loadDataDashboard(url) {
                 });
             }
 
-            // Sort the categories (Month and Year) in descending order
+            // Sort the categories (Month and Year) in ascending order
             categories.sort(function(a, b) {
-                return new Date(b) - new Date(a);
+                return new Date(a) - new Date(b); // Compare dates for ascending order
             });
+
 
             // Sort the sales data to match the sorted categories
             salesData = categories.map(function(monthYear) {
@@ -247,10 +248,13 @@ function loadDataDashboard(url) {
             // **Top 10 High Sale Products** (updated to vertical bar chart)
             let topHighSaleProducts = Object.keys(productSalesData)
             .map(function(productName) {
-            return { name: productName, sales: productSalesData[productName] };
+                return {
+                    name: productName,
+                    sales: parseFloat(productSalesData[productName].toFixed(2)) // Limit to 2 decimal places
+                };
             })
             .sort(function(a, b) {
-            return b.sales - a.sales; // Sort in descending order by sales (high to low)
+                return b.sales - a.sales; // Sort in descending order by sales (high to low)
             })
             .slice(0, 5); // Get the top 5 high sale products
 
@@ -328,10 +332,13 @@ function loadDataDashboard(url) {
             // **Top 5 Low Sale Products** (updated to vertical bar chart)
             let topLowSaleProducts = Object.keys(productSalesData)
             .map(function(productName) {
-            return { name: productName, sales: productSalesData[productName] };
+                return {
+                    name: productName,
+                    sales: parseFloat(productSalesData[productName].toFixed(2)) // Limit to 2 decimal places
+                };
             })
             .sort(function(a, b) {
-            return a.sales - b.sales; // Sort in ascending order by sales (low to high)
+                return a.sales - b.sales; // Sort in ascending order by sales (low to high)
             })
             .slice(0, 5); // Get the top 5 low sale products
 

@@ -1,0 +1,7 @@
+Change the spelling of "Cange Password" on "Profile" - done
+Change the spelling of "Chage Password" on "Profile" (password form) - done 
+Switch Place "Allyssa and John" on "About" - done
+Change the spelling of "Chage Password" on "Super Admin" (password form) - done
+Change the spelling of "Chage Password" on "Admin" (password form) - done 
+Change the displayed digits for Top 5 High and top 5 low into 2 decimal places 
+Monthly Sales Graph should start from 2021 to 2024 "Dashboard" 

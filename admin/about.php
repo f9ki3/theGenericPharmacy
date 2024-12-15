@@ -39,10 +39,18 @@
                     <div class="row">
                         <div class="col-6 col-md-4 ">
                             <div style=" width: 120px; height: 120px">
+                                <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/John Benedict R. Mopera.jpeg" alt="" >
+                            </div>
+                            <h5 class="mt-3">John Benidict Mopera</h5>
+                            <p>Leader</p>
+                            
+                        </div>
+                        <div class="col-6 col-md-4 ">
+                            <div style=" width: 120px; height: 120px">
                                 <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/Allyssa M. Feliciano.jpeg" alt="" >
                             </div>
                             <h5 class="mt-3">Allyssa M. Feliciano</h5>
-                            <p>Leader</p>
+                            <p>Member</p>
                             
                         </div>
                         <div class="col-6 col-md-4 ">
@@ -66,15 +74,6 @@
                                 <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/Rhea Luz S. Hernandez.jpeg" alt="" >
                             </div>
                             <h5 class="mt-3">Rhea Luz S. Hernandez</h5>
-                            <p>Member</p>
-                            
-                        </div>
-                        
-                        <div class="col-6 col-md-4 ">
-                            <div style=" width: 120px; height: 120px">
-                                <img style="object-fit: cover; height: 100%; border-radius: 100%; width: 100%" src="../assets/img/members pics/John Benedict R. Mopera.jpeg" alt="" >
-                            </div>
-                            <h5 class="mt-3">John Benidict Mopera</h5>
                             <p>Member</p>
                             
                         </div>
